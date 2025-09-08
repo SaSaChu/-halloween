@@ -1,16 +1,401 @@
-/**
- * @author      OA Wu <oawu.tw@gmail.com>
- * @copyright   Copyright (c) 2015 - 2024, Lalilo
- * @license     http://opensource.org/licenses/MIT  MIT License
- * @link        https://www.ioa.tw/
- */
-
 @use "sass:math";
 @import "_/_Lib";
 @import "_/Core";
 @import "Lalilo";
 @import "_/Bootstrap";
 
+/* 色票可依設計調整 */
+$purple: #3c2474;        /* 背景 */
+$purple-deep: #2a1556;   /* 導覽底色 */
+$purple-deeper: #221040; /* Modal 底色 */
+$yellow: #FFF100;
+
 body {
-  background-color: #f0f0f0;
+  background-image:
+    url("../images/bg-doll.webp");
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 0 0;
+  background-size: cover, auto; /* 上層鋪滿；下層平鋪 */
+  background-color: #46277D;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
 }
+body.menu-opening .video-area iframe { pointer-events: none; }
+
+
+
+/* 版心：固定 1200px（兩條紅線內） */
+.wrap-1200 {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* Skip link（鍵盤可見） */
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -40px;
+  background: #000;
+  color: #fff;
+  padding: .5rem .75rem;
+  z-index: 1100;
+  text-decoration: none;
+
+  &:focus { top: 0; }
+}
+
+/* 大menu 開始*/
+.nav-link { color: white; }
+.nav-link:link { color: white; }
+.nav-link:visited { color: white; }
+.nav-link:hover { color: $yellow; }
+.nav-link:focus-visible { color: $yellow; }
+.nav-link:active { color: $yellow; }
+.nav-link.is-active { color: $yellow; }
+.nav-link[aria-current="page"] { color: $yellow; }
+
+/* 桌機導覽外層（含 sticky） */
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  /* 先用 CSS sticky */
+  &.is-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  } /* JS 加強 */
+}
+
+/* 導覽膠囊背景 */
+.nav-hallo {
+  background: $purple-deep;
+  border-radius: 48px;
+  margin: 16px auto;
+  padding: 12px 8px;
+
+  .wrap-1200 {
+    padding-inline: 24px;
+  }
+}
+
+/* 水平清單 */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* 每個選項 */
+.nav-item { display: flex; }
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: $white;
+  font-weight: 500;
+  letter-spacing: .02em;
+  outline-offset: 2px;
+  font-size: 1.2rem;
+
+  /* 進場掉落動畫的起點 */
+  transform: translateY(-16px);
+  opacity: 0;
+  transition: transform .6s cubic-bezier(.22,.61,.36,1), opacity .6s ease;
+
+  &:hover, &:focus-visible {
+    text-decoration: none;
+    color: $yellow ;
+  }
+
+  &.is-show {
+    transform: none;
+    opacity: 1;
+  }
+    /* JS 加上這個 class 逐一進場 */
+
+  &.is-active { color: $yellow; }
+}
+
+.pumpkin {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+/* 手機下方兩顆按鈕 */
+.mobile-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: rgba($purple, .5);
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 0;
+  background: $purple-deep;
+  color: $white;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid rgba(255,255,255,.7);
+    outline-offset: 2px;
+  }
+}
+
+.btn-pill.is-active,
+.btn-pill[aria-current="page"],
+#btnMenu[aria-expanded="true"] { 
+  color: $yellow;
+  touch-action: manipulation;
+}
+
+/* Modal 內的清單 */
+/* 手機側欄光箱（.modal-menu）開始 */
+.modal-menu {
+  .modal-dialog {
+    margin: 0;
+    width: 84vw;
+    max-width: 360px;
+    height: 100%;
+  }
+  .modal-content {
+    height: 100%;
+    background-color: $purple-deep;
+    color: $white;
+    border-radius: 0 16px 16px 0;
+    border: 0;
+  }
+  .modal-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+    position: sticky;
+    top: 0;
+    background-color: $purple-deep;
+    z-index: 2;
+  }
+  .modal-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    color: $white;
+  }
+  .btn-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    background-color: $yellow;
+    opacity: 1;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% 60%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='%232a1556'%3E%3Cpath d='M3.2 3.2a1 1 0 011.4 0L8 6.6l3.4-3.4a1 1 0 111.4 1.4L9.4 8l3.4 3.4a1 1 0 11-1.4 1.4L8 9.4l-3.4 3.4a1 1 0 11-1.4-1.4L6.6 8 3.2 4.6a1 1 0 010-1.4z'/%3E%3C/svg%3E");
+    &:focus-visible {
+      outline: 2px solid $white;
+      outline-offset: 2px;
+    }
+  }
+  .modal-body {
+    padding: 16px;
+  }
+  .modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    row-gap: 18px;
+  }
+  .modal-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 4px;
+    color: $white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+    &:hover {
+      color: $yellow;
+    }
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, .6);
+      outline-offset: 2px;
+    }
+    &.is-active {
+      color: $yellow;
+    }
+  }
+  .modal-link[aria-current="page"] {
+    color: $yellow;
+  }
+  .pumpkin {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+  &.modal {
+    &.fade {
+      .modal-dialog {
+        transform: translateX(-100%);
+        transition: transform .25s ease-out;
+      }
+    }
+    &.show {
+      .modal-dialog {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+/* 背景遮罩微霧化（只影響 modal） */
+.modal-backdrop {
+  &.show {
+    opacity: .6;
+    backdrop-filter: blur(2px);
+  }
+}
+/* 從左側滑入（僅套用 .modal-menu） */
+
+
+/* 較大螢幕時側欄稍寬 */
+@media (min-width: 576px) {
+  .modal-menu .modal-dialog {
+    max-width: 420px;
+  }
+}
+/* 手機側欄光箱（.modal-menu）結束 */
+
+
+/* 進場動畫：尊重使用者偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* 偽內容區塊，方便拉長頁面測試 sticky */
+.placeholder-content {
+  height: 1200px;
+  opacity: .2;
+}
+
+/* 小螢幕調整 */
+@media (max-width: 767.98px) {
+  .nav-hallo {
+    display: none;
+  } /* 手機只顯示兩顆按鈕與光箱 */
+}
+/* 大menu 結束*/
+
+
+
+/* 精彩預告 開始 */
+.video-area {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* 外框：左上角放一張底圖、不重複 */
+.video-box {
+  background-color: #2a1556;
+  border-radius: 28px;
+  padding: 24px;
+  background-image: url("../images/title-bg.webp");
+  background-repeat: no-repeat;
+  background-position: left 0 top 0;
+}
+
+/* 標題 */
+.video-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+@media (max-width: 767.98px) {
+  .video-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .video-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* 卡片可鍵盤聚焦時的可見外框 */
+.video-card:focus-within {
+  outline: 3px solid #ffd84d;
+  outline-offset: 6px;
+  border-radius: 10px;
+}
+
+/* 讓 iframe 圓角同步 */
+.video-card .ratio {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 小螢幕間距微調 */
+@media (max-width: 767.98px) {
+  .video-box {
+    padding: 16px;
+  }
+  .video-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+}
+
+/* 僅供螢幕閱讀器（Bootstrap 亦有 .visually-hidden 可直接用） */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* 精彩預告 結束 */
+
+
+
+
+
+
+
+
+
+
