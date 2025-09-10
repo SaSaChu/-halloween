@@ -9,6 +9,9 @@ $purple: #3c2474;        /* 背景 */
 $purple-deep: #2a1556;   /* 導覽底色 */
 $purple-deeper: #221040; /* Modal 底色 */
 $yellow: #FFF100;
+$light-purple: #9022D9;
+$cta-orange: #e96f4d;
+$cta-green: #21b37a;
 
 body {
   background-image:
@@ -20,14 +23,96 @@ body {
   font-family: "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
   font-size: 16px;
 }
+
 body.menu-opening .video-area iframe { pointer-events: none; }
 
+a {
+  text-decoration: none !important;
+}
+/* 按鈕 開始 */
+.cta-area {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* 列容器（可用 Bootstrap 的 .row/gap 控制間距） */
+.cta-list {
+  align-items: center;
+}
+
+/* 膠囊按鈕 */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 10px;
+  background-color: $cta-orange;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+  line-height: 1;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .15);
+
+  &:hover {
+    background-color: $cta-green;
+    color: #ffffff;
+    text-decoration: none !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, .9);
+    outline-offset: 2px;
+  }
+
+  &.is-active {
+    background-color: $cta-green;
+    color: #ffffff;
+  }
+}
+
+
+.cta-btn[aria-current="page"] {
+  background-color: $cta-green;
+  color: #ffffff;
+}
+
+.cta-btn[aria-pressed="true"] {
+  background-color: $cta-green;
+  color: #ffffff;
+}
+
+/* 圖示（裝飾） */
+.cta-ico {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  pointer-events: none;
+}
+
+/* 手機：自動換行、按鈕不擠在一起 */
+@media (max-width: 767.98px) {
+  .cta-list {
+    row-gap: 8px;
+  }
+}
+
+
+/* 按鈕 結束 */
 
 
 /* 版心：固定 1200px（兩條紅線內） */
 .wrap-1200 {
   max-width: 1200px;
   margin-inline: auto;
+
+  @include media-breakpoint-down(xl) {
+    padding: 0 8px;
+  }
 }
 
 /* Skip link（鍵盤可見） */
@@ -78,6 +163,14 @@ body.menu-opening .video-area iframe { pointer-events: none; }
   .wrap-1200 {
     padding-inline: 24px;
   }
+
+  @include media-breakpoint-down(xl) {
+    margin: 8px;
+
+    .wrap-1200 {
+      padding-inline: 12px;
+    }
+  }
 }
 
 /* 水平清單 */
@@ -105,12 +198,16 @@ body.menu-opening .video-area iframe { pointer-events: none; }
   font-weight: 500;
   letter-spacing: .02em;
   outline-offset: 2px;
-  font-size: 1.2rem;
+  font-size: 1.23rem;
 
   /* 進場掉落動畫的起點 */
   transform: translateY(-16px);
   opacity: 0;
   transition: transform .6s cubic-bezier(.22,.61,.36,1), opacity .6s ease;
+
+  @include media-breakpoint-down(xl) {
+    padding: 8px;
+  }
 
   &:hover, &:focus-visible {
     text-decoration: none;
@@ -137,7 +234,7 @@ body.menu-opening .video-area iframe { pointer-events: none; }
   position: sticky;
   top: 0;
   z-index: 1020;
-  background: rgba($purple, .5);
+  background: rgba($purple, .8);
 }
 
 .btn-pill {
@@ -164,6 +261,35 @@ body.menu-opening .video-area iframe { pointer-events: none; }
   color: $yellow;
   touch-action: manipulation;
 }
+
+
+/* iPad / md~lg：3 欄兩行 */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .nav-hallo {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
+    row-gap: 12px;
+    justify-items: center;
+  }
+  .nav-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-item-en {
+    display: none; /* 想保留 English 就把這行刪掉 */
+  }
+}
+
 
 /* Modal 內的清單 */
 /* 手機側欄光箱（.modal-menu）開始 */
@@ -392,10 +518,748 @@ body.menu-opening .video-area iframe { pointer-events: none; }
 
 
 
+/* 最新消息 開始 */
+/* 區塊外框 */
+.news-area {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.news-box {
+  background-color: #2a1556;
+  border-radius: 28px;
+  padding: 24px;
+  background-image: url("../images/title-bg.webp");
+  background-repeat: no-repeat;
+  background-position: left 0 top 0;
+}
+
+/* 標題 */
+.news-head {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+/* 每列為整塊可點的超連結 */
+.news-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.news-link {
+  + {
+    .news-link {
+      border-top: 1px solid rgba(255, 255, 255, .15);
+    }
+  }
+  &:hover {
+    .news-title {
+      color: $yellow;
+    }
+  }
+  &:focus-visible {
+    .news-title {
+      color: $yellow;
+    }
+  }
+}
+.news-date {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  background-color: $light-purple;
+  color: white;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+.news-hand {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.news-title {
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  padding-left: 20px;
+}
+.news-link.is-hover {
+  .news-title {
+    color: $yellow;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .news-box {
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .news-head {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .news-link {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    + {
+      .news-link {
+        border-top: 1px dashed $yellow;
+      }
+    }
+  }
+  .news-hand {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-link {
+    transition: none;
+  }
+}
+
+/* 最新消息 結束 */
 
 
 
+/* 回到上方按鈕 開始 */
+.backtop-btn {
+  position: fixed;
+  right: 16px;
+  bottom: calc(100px + env(safe-area-inset-bottom));
+  z-index: 1040;
+  width: 56px;
+  height: 56px;
+  padding: 8px;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.backtop-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.backtop-btn.is-show {
+  opacity: 1;
+  transform: none;
+}
+
+.backtop-btn {
+  &:hover {
+    outline: 2px solid transparent;
+  }
+}
+
+.backtop-btn {
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, .9);
+    outline-offset: 2px;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .backtop-btn {
+    right: 12px;
+    bottom: calc(50px + env(safe-area-inset-bottom));
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backtop-btn {
+    transition: none;
+    transform: none;
+  }
+}
+/* 回到上方按鈕 結束 */
 
 
 
+/* footer 開始 */
+footer {
+  background-color: #210707;
+}
 
+.footer-area {
+  text-align: center;
+}
+
+.footer-img {
+  width: 50%;
+  height: auto;
+  display: inline-block;
+}
+
+@media (max-width: 767.98px) {
+  .footer-img {
+    width: 100%;
+  }
+}
+/* footer 結束 */
+
+
+
+/* 最新消息 開始 */
+/* 區塊外距 */
+.ptitle-area {
+  padding-top: 8px;
+}
+
+/* 底圖容器：2x 圖等比縮成 439px 寬 */
+.ptitle-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  background-image: url("../images/page-title.webp");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 439px auto;
+  border-radius: 12px;
+}
+
+/* 標題（A 級：可見 h1） */
+.ptitle-title {
+  margin: 0;
+  color: $yellow;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 手機：底圖 320px 寬，高度對應為 64px */
+@media (max-width: 767.98px) {
+  .ptitle-box {
+    min-height: 64px;
+    background-size: 320px auto;
+  }
+  .ptitle-title {
+    font-size: 22px;
+  }
+}
+
+/* 區塊外距 */
+.post-area {
+  padding-bottom: 12px;
+}
+
+/* 內容卡片 */
+.post-box {
+  background-color: rgb(45 15 65 / 50%);
+  border-radius: 28px;
+  padding: 24px;
+}
+
+/* 標題列 */
+.post-header {
+  margin-bottom: 12px;
+}
+
+/* 虛線 */
+.post-sep {
+  border: 0;
+  border-top: 6px dotted #FF630D;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 1;
+}
+
+.post-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.post-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* 內文（可共用到其他內頁） */
+.post-body {
+  color: #ffffff;
+  line-height: 1.9;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.post-body p {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* 內文連結：黃色底線 */
+.post-body a,
+.post-link {
+  /*color: $yellow;*/
+  text-decoration: underline;
+  text-decoration-color: $yellow;
+  text-underline-offset: 3px;
+}
+
+.post-body a:visited,
+.post-link:visited {
+  color: $yellow;
+}
+
+.post-body a:hover,
+.post-link:hover {
+  color: $yellow;
+  text-decoration-thickness: 2px;
+}
+
+.post-body a:focus-visible,
+.post-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, .8);
+  outline-offset: 2px;
+}
+
+/* 相簿與圖片 */
+.post-gallery {
+  margin-bottom: 16px;
+}
+
+.post-fig {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-fig-lg {
+  width: 100%;
+  max-width: none;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 讓圖片本身跟著容器等比縮放、保持圓角 */
+.post-fig-lg .post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .post-fig-lg {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+/* 小螢幕調整 */
+@media (max-width: 767.98px) {
+  .post-box {
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .post-title {
+    font-size: 22px;
+  }
+  .post-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .post-body {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+
+/* 螢幕閱讀器專用（若專案未定義可保留） */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* 最新消息 結束 */
+
+/* 順遊景點 開始*/
+/* -------- poi（景點卡片）-------- */
+.poi-wrap {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.poi-fig {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 6px solid #ffffff;
+}
+
+.poi-fig-link {
+  display: block;
+  overflow: hidden;
+
+  &::focus-visible {
+    outline: 3px solid #ffd84d;
+    outline-offset: 4px;
+  }
+}
+
+/* 互動小效果（可選） */
+.poi-fig-link:hover .poi-img {
+  transform: scale(1.02);
+  transition: transform .2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poi-fig-link:hover .poi-img {
+    transform: none;
+    transition: none;
+  }
+}
+
+.poi-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poi-panel {
+  padding: 0 15px 15px 15px;
+  height: 100%;
+}
+
+.poi-title {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.3;
+  background-color: #8e3fb3;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.poi-no {
+  display: inline-block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 800;
+}
+
+/* 手機微調 */
+@media (max-width: 767.98px) {
+  .poi-fig {
+    border-radius: 12px;
+    border: 4px solid #ffffff;
+  }
+  .poi-panel {
+    padding: 14px 0;
+    border-radius: 12px;
+  }
+  .poi-title {
+    font-size: 20px;
+  }
+  .poi-no {
+    border-radius: 6px;
+  }
+}
+
+/* 順遊景點 結束 */
+
+/* 魔幻舞台 開始 */
+/* 區塊外距 */
+.sched-area {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* 白底卡片 */
+.sched-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+}
+
+/* 標題列（左標題、右主持人） */
+.sched-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: #8f41c9;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+/* 手機：標題與主持人上下行排列 */
+@media (max-width: 767.98px) {
+  .sched-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .sched-title {
+    width: 100%;
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+  .sched-host {
+    width: 100%;
+    margin-top: 0;
+    line-height: 1.25;
+  }
+}
+
+.sched-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.sched-host {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* ── 表格：改用 border-spacing 做欄距與列距 ── */
+.table-responsive:focus {
+  outline: 3px solid #ffd84d;
+  outline-offset: 4px;
+}
+
+.sched-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 16px 12px;  /* 水平 16 / 垂直 12 的空隙 */
+}
+
+/* 表頭 */
+.sched-table thead th {
+  background-color: #713107;
+  color: #ffffff;
+  font-weight: 800;
+  border: 0;
+  background-clip: padding-box;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+/* 日期欄（11/1、11/2）：改成與其他儲存格相同的灰底 */
+.sched-table tbody th.sched-day {
+  background-color: #f6f6f6;
+  color: #4a2b6f;
+  font-weight: 800;
+  border: 0;
+  border-radius: 8px;
+  padding: 16px 18px;
+  white-space: nowrap;
+}
+
+/* 其他儲存格 */
+.sched-table td {
+  background-color: #f6f6f6;
+  border: 0;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+/* 取消舊的「白色粗邊」列距，改由 border-spacing 處理 */
+.sched-table tr + tr td,
+.sched-table tr + tr th {
+  border-top: 0;
+}
+
+/* 點點分隔線（裝飾） */
+.sched-sep td {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+.sched-dotline {
+  border-top: 6px dotted #9a4be3;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* 小螢幕微調 */
+@media (max-width: 767.98px) {
+  .sched-box {
+    padding: 10px;
+    border-radius: 14px;
+  }
+  .sched-title {
+    font-size: 1.2rem;
+  }
+  .sched-host {
+    font-size: 1rem;
+  }
+  .sched-table {
+    border-spacing: 12px 10px;
+  }
+  .sched-table thead th {
+    font-size: 1rem;
+    white-space: nowrap;
+    padding: 12px 14px;
+  }
+  .sched-table td {
+    font-size: 1rem;
+    white-space: nowrap;
+    padding: 12px 14px;
+  }
+  .sched-table tbody th.sched-day {
+    padding: 12px 14px;
+  }
+}
+
+/* 螢幕閱讀器（若專案未全域定義） */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.liveinfo-area {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.liveinfo-poster {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 6px solid #ffffff;
+}
+
+.liveinfo-desc p {
+  color: #ffffff;
+  margin-bottom: .6rem;
+}
+
+.liveinfo-dl {
+  margin-top: .5rem;
+  margin-bottom: 0;
+}
+
+.liveinfo-dd {
+  color: #ffffff;
+}
+
+/* 標籤膠囊 */
+.tag-pill {
+  display: inline-block;
+  padding: .6rem .6rem;
+  border-radius: .25rem;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: .95rem;
+  line-height: 1;
+}
+
+.tag-orange {
+  background-color: #ff7a3d;
+}
+
+.tag-green {
+  background-color: #0db37a;
+}
+
+.liveinfo-inline {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* 卡片與圖片 */
+.liveinfo-card {
+  overflow: hidden;
+  background-color: rgba(255,255,255,.08);
+}
+
+.liveinfo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 鍵盤聚焦可見 */
+.liveinfo-card:focus-within {
+  outline: 3px solid #ffd84d;
+  outline-offset: 4px;
+}
+
+/* 小螢幕微調 */
+@media (max-width: 767.98px) {
+  .liveinfo-inline {
+    font-size: .95rem;
+  }
+  .liveinfo-card {
+    border-width: 4px;
+    border-radius: 12px;
+  }
+}
+
+/* 若專案未全域定義 visually-hidden，補上 */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 魔幻舞台 結束 */

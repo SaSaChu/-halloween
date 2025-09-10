@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>桃園萬聖城 | 順遊景點</title>
+    <link rel="icon" href="images/favicon.webp" type="image/svg+xml">
+    <link rel="stylesheet" href="css/index.css">
+    
+  </head>
+
+  <body>
+    <!-- 上方主視覺 -->
+    <div class="container-fluid p-0">
+      <figure class="m-0">
+        <!-- 用你的實際尺寸，避免版面跳動 -->
+        <img
+          src="images/top-image.webp"
+          class="img-fluid w-100 d-block"
+          width="1920" height="640"
+          alt="2025 桃園萬聖城主視覺：中央卡通蜘蛛，背景城堡與萬聖裝飾。"
+          aria-describedby="topPosterInfo"
+          fetchpriority="high" decoding="async">
+        <figcaption id="topPosterInfo" class="mt-2 visually-hidden">
+          <strong>2025 桃園萬聖城</strong>｜
+          <time datetime="2025-10-25">10/25</time>–<time datetime="2025-11-02">11/02</time>｜
+          桃園藝文廣場＆綠園道
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- 跳到主內容（鍵盤可用） -->
+    <a class="skip-link" href="#mainContent">跳到主內容</a>
+    <!-- 讓 sticky 判斷位置的錨點 -->
+    <div id="navAnchor" class="visually-hidden" aria-hidden="true"></div>
+
+    <!-- 桌機版主選單 -->
+    <div class="nav-wrap d-none d-md-block" id="navWrap">
+      <nav aria-label="主選單">
+        <div class="nav-hallo wrap-1200">
+          <ul class="nav-list" role="menubar" aria-label="萬聖主選單">
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="index.html">
+                <img class="pumpkin"
+                     src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true"
+                     data-src="images/pumpkin.webp"
+                     data-hover="images/pumpkin-active.webp"
+                     data-active="images/pumpkin-active.webp">
+                最新消息
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="theme-activities.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="主題活動" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                主題活動
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="magic-stage.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="魔幻舞台" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                魔幻舞台
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="transport-info.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="交通資訊" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                交通資訊
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="partners.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="萬聖城盟友" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                萬聖城盟友
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link is-active" href="nearby-attractions.html" aria-current="page">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="順遊景點" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                順遊景點
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="index-en.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="English" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                English
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 手機版：兩顆按鈕（左：光箱選單 / 右：English） -->
+    <div class="mobile-bar d-md-none" aria-label="手機主選單列">
+      <div class="wrap-1200 px-3">
+        <div class="row g-3 py-2">
+          <div class="col-6 mt-0">
+            <button id="btnMenu" type="button" class="btn-pill w-100"
+                    data-bs-toggle="modal" data-bs-target="#menuModal" aria-haspopup="dialog"
+                    aria-controls="menuModal" aria-expanded="false">
+              <img class="pumpkin" src="images/pumpkin-active.webp" alt="" aria-hidden="true">
+              活動主選單
+            </button>
+          </div>
+          <div class="col-6 mt-0">
+            <a class="btn-pill w-100" href="index-en.html">
+              <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">
+              English
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 手機版光箱：Bootstrap Modal -->
+    <div class="modal fade modal-menu" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-deeper-purple text-white">
+          <div class="modal-header border-0">
+            <h2 class="modal-title fs-5" id="menuModalLabel">活動主選單</h2>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="modal-list" role="menu" aria-label="手機選單">
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="index.html">
+                  <img class="pumpkin" src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true">最新消息
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="theme-activities.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="主題活動" aria-hidden="true">主題活動
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="magic-stage.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="魔幻舞台" aria-hidden="true">魔幻舞台
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="ttransport-info.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="交通資訊" aria-hidden="true">交通資訊
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="partners.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="萬聖城盟友" aria-hidden="true">萬聖城盟友
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="nearby-attractions.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="順遊景點" aria-hidden="true">順遊景點
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="index-en.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="English" aria-hidden="true">English
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容 -->
+    <main id="mainContent" class="wrap-1200 py-5">
+      <section class="ptitle-area" aria-labelledby="ptitle">
+        <div class="wrap-1200 px-3">
+          <div class="ptitle-box">
+            <h1 id="ptitle" class="ptitle-title">順遊景點</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- 文章內容區 -->
+      <section class="post-area" aria-labelledby="postTitle">
+        <div class="wrap-1200">
+          <article class="post-box">
+
+            <!-- 標題 -->
+            <header class="post-header">
+              <h1 id="postTitle" class="post-title">
+                <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+                周邊景點
+              </h1>
+            </header>
+
+            <!-- 內文（可在其他頁共用 .post-body） -->
+            <div class="post-body">
+              <div class="row g-3 align-items-stretch poi-wrap">
+                <!-- 01 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic01.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="桃園景福宮山門與牌樓正面景觀，街道車流穿梭">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      桃園景福宮外觀。
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">01.</span>
+                      景福宮
+                    </h2>
+                    <p>
+                      具有百年歷史的景福宮，是在地人口中的「大廟」，不單單是地方信仰中心，
+                      從古至今皆是城市發展的重要樞紐。早期的中正路、民生路即是以景福宮為中心向四方開展，
+                      形成商圈聚落。見證桃園百年風華的景福宮，亦為人們了解這塊土地歷史軌跡的首選媒介。
+                    </p>
+                  </div>
+                </div>
+              
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 02 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic02.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="南昌森林運動公園樹蔭大道，右側白屋與路燈、左側紅色跑道。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      南昌森林運動公園
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">02.</span>
+                      南昌森林運動公園
+                    </h2>
+                    <p>
+                      南昌森林運動公園原為陸軍21砲指部營區，由國防部於2021年與市府簽訂代管活化利用，將昔日營區內的各項設施加以整建，有風雨休閒廣場、半室內開放式的籃球場、羽球場及桌球館，成為民眾放鬆身心之好去處，值得一提的是公園改造為保有原有生態，市府也採取「樹木優先、跑道轉彎」的方式，將跑道轉彎或繞過方式施設，成為公園特色景觀。
+                    </p>
+                    <a href="https://maps.app.goo.gl/5uuaSYQtdf817Ann8" class="post-link" target="_blank">地址：桃園市桃園區向善街120號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 03 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/1577"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic03.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="大有梯田生態公園綠色梯田，蜿蜒步道與木亭，遠處丘陵環繞。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      大有梯田生態公園
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">03.</span>
+                      大有梯田生態公園
+                    </h2>
+                    <p>
+                      大有梯田生態公園位於虎頭山風景區西北側山腳，民富十三街底(大有消防分隊旁)，面積約2.1公頃，規劃有生態梯田區、美好食光區及森林挑戰區三大區域，周邊亦設置適合全齡層使用的體健設施、吊床及吊椅休憩區等，完善服務各年齡層民眾，漫步在公園旁的綠化古道及虎頭山風景區，離開都市的喧囂，享受自然的芬芳。
+                      </br></br>
+                      (文字提供：本府工務局)
+                    </p>
+                    <a href="https://www.google.com/maps/place/25.01165084748328,121.32148504257202" class="post-link" target="_blank">地址：桃園市桃園區民有十街200號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 04 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/2180"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic04.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="桃林鐵路夜景，路面螢光石點點發亮，兩旁高樓與行道燈。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      桃林鐵路
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">04.</span>
+                      桃林鐵路
+                    </h2>
+                    <p>
+                      桃林鐵路昔日為用來載運煤礦，更轉型為客運通勤列車，桃園升格後，市府積極推動桃林鐵路路廊活化計畫，打造桃林鐵路自行車，吸引不少民眾前來騎自行車，走路運動，更在桃園區民光東路及三元街段步道鋪設蓄光石，在夜晚中閃耀美麗光芒，彷彿梵谷畫筆下的〈星夜〉躍然眼前，閒置鐵路華麗轉身成為最美星光大道。
+                      </br></br>
+                      (文字提供：本府工務局)
+                    </p>
+                    <a href="https://www.google.com/maps/place/24.99595010546158,121.32606893777847" class="post-link" target="_blank">地址：桃園市桃園區壽山路145號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 05 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic05.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="虎頭山公園友善步道旁球形樹屋，木棧道通往林間景點。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      虎頭山公園全齡有善步道
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">05.</span>
+                      虎頭山公園全齡有善步道
+                    </h2>
+                    <p>
+                      虎頭山公園鄰近桃園市區，地勢居高臨下，為城市景觀保留了豐沛綠意，而享有「桃園後花園」的美譽。公園內規劃有多條步道系統，以顏色作為路線區分，除了園區的人行步道外，另外完整規劃出包括賞景健康步道、櫻花步道、森林體驗步道、太陽亭步道、梅園步道、生態解說步道、忠烈祠步道等七條環狀登山步道，讓遊客更容易探訪虎頭山的美景全貌。
+                    </p>
+                    <a href="https://maps.app.goo.gl/nJVnzhRcUQsD4VqbA" class="post-link" target="_blank">地址：桃園市桃園區公園路42號(主入口)</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 06 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/12"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic06.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="忠烈祠暨神社文化園區石造鳥居與參道石燈，藍天下綠樹環繞。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      忠烈祠暨神社文化園區
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">06.</span>
+                      忠烈祠暨神社文化園區
+                    </h2>
+                    <p>
+                      座落於桃園市虎頭山上的桃園市忠烈祠，落成於民國二十七年，前身為日本人所建造的「桃園神社」，是臺灣保存最為完整的日治時代神社，建築風格融合了中國古代唐風、日本風及臺灣近代風，採用上等台灣檜木構築，並已在民國八十三年經公告正式被列為市定古蹟；也因為特殊的歷史文化價值，而被電影《KANO》選中成為拍片場景，引領觀眾深刻感受1930年代的歲月回憶。
+                      </br></br>
+                      (文字提供：桃園市政府孔廟忠烈祠聯合管理所)
+                    </p>
+                    <a href="https://www.google.com/maps/place/25.00629,121.32528" class="post-link" target="_blank">地址：桃園市桃園區成功路三段200號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 07 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic07.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="虎頭山環保公園觀景視野，前方綠林、後方城市天際線與山脈。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      虎頭山環保公園
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">07.</span>
+                      虎頭山環保公園
+                    </h2>
+                    <p>
+                      想要捕獲大桃園360度全景視野，不需要挑戰高海拔也能輕鬆達陣！離桃園火車站不到5公里的虎頭山，當中的環保公園標高雖僅251公尺，卻是市區制高點，因此坐擁璀璨星光與城市燈火輝映的無遮蔽美景，一直以來都是在地賞景熱搜景點。 
+                    </p>
+                    <a href="https://maps.app.goo.gl/kE7f54jV2ELN7YW46" class="post-link" target="_blank">地址：桃園市桃園區成功路三段</a>
+                  </div>
+                </div>
+              
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 08 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/1265"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic08.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="南崁溪水岸自行車道夜景，彩虹拱橋照明映在河面。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      南崁溪水岸自行車道
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">08.</span>
+                      南崁溪水岸自行車道
+                    </h2>
+                    <p>
+                      南崁溪近年在經過整治之後，河岸廣設綠地，水質清淨宜人。在政府規劃下，桃園第一條水岸自行車道應運而生，配合沿線如桃園第一河濱公園、青溪彩虹橋及寵物示範公園等多元休閒設施，成為一處多功能的遊憩水岸。
+                    </p>
+                    <a href="https://www.google.com/maps/place/25.04642,121.28732" class="post-link" target="_blank">地址：桃園市蘆竹區南崁溪沿岸</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 09 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/1424"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic09.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="桃園 77 藝文町祈福繪馬牆，遊客站在中央，木牌寫有祈福字樣。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      桃園77藝文町
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">09.</span>
+                      桃園77藝文町
+                    </h2>
+                    <p>
+                      「桃園77藝文町」前身為桃園警察局日式宿舍群，位於桃園火車站前商圈，規劃為歷史建築，市府重修後活化為文創園區，是桃園最受歡迎的拍照打卡景點之一，更有多元化的空間區域與展演活動，充滿藝文氣息的庭園空間，來趟和風慢活散步之旅，很是愜意。
+                      </br></br>
+                      (文字提供：七七藝文町)
+                    </p>
+                    <a href="https://www.google.com/maps/place/24.99172,121.3115" class="post-link" target="_blank">地址：桃園市桃園區中正路77巷5號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 10 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic10.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="利百代彩筆文創館外觀，巨型彩筆裝置與大型展示看板。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      利百代彩筆文創館
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">10.</span>
+                      利百代彩筆文創館
+                    </h2>
+                    <p>
+                      早期人手一支的利百代鉛筆，是臺灣學子的共同記憶，創立已超過一甲子的利百代文具，將工廠轉型展現創新面貌。除有歷史展示、文具製程介紹外，還有巨型文具造景、文具DIY 創作體驗以及商店、義式餐廳等，豐富多彩。
+                    </p>
+                    <a href="maps.app.goo.gl/fQFhv8NXHKP8r7QD8" class="post-link" target="_blank">地址：桃園市桃園區大誠路2號</a>
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 11 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/137"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic11.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="南僑桃園生活體驗園區入口，白色題字立柱與館舍外觀。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      南僑桃園生活體驗園區
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">11.</span>
+                      南僑桃園生活體驗園區
+                    </h2>
+                    <p>
+                      南僑桃園觀光體驗工廠是龜山工業區第一家觀光工廠， 館內有多項DIY 活動，還設有異國美食餐廳，泰式、中式、西式等，滿足各種饕客的味蕾，是一處寓教於樂又可以大啖美食的觀光工廠。
+                    </p>
+                    <a href="https://www.google.com/maps/place/24.98238,121.32477" class="post-link" target="_blank">地址：桃園市龜山區龜山工業區興邦路35號</a>
+                    
+                  </div>
+                </div>
+
+                <hr class="post-sep" aria-hidden="true">
+
+                <!-- 12 -->
+                <!-- 左：圖片 -->
+                <div class="col-12 col-md-6">
+                  <figure class="poi-fig m-0">
+                    <a class="poi-fig-link"
+                       href="https://travel.tycg.gov.tw/zh-tw/travel/attraction/13"
+                       target="_blank"
+                       rel="noopener"
+                       aria-describedby="cap-jingfugong">
+                      <img
+                        src="images/attractions/pic12.webp"
+                        class="img-fluid poi-img"
+                        loading="lazy"
+                        alt="祥儀機器人夢工廠展區，兩名孩童以遙控器操控格鬥機器人在擂台對戰，旁有工作人員與參觀民眾。">
+                    </a>
+                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                      祥儀機器人夢工廠
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <!-- 右：標題＋文字 -->
+                <div class="col-12 col-md-6">
+                  <div class="poi-panel">
+                    <h2 class="poi-title">
+                      <span class="poi-no">12.</span>
+                      祥儀機器人夢工廠
+                    </h2>
+                    <p>
+                      亞洲唯一、國際亮點機器人觀光工廠在桃園，館內七大主題區：時光任意門、傳動智慧島、科技寶樂園、藝文大舞台、宇宙競技場、未來方程式、桃園新創島，各類不同性質的互動機器人，各區更配有專業的工程人員，協助民眾親身體驗驗機器人的傳動魔力，亦針對各種年齡開設各類不同的課程，透過實作讓民眾習得實證精神及解決問題的能力，讓知識能夠學以致用。 
+                      </br></br>
+                      （資料來源：祥儀機器人夢工廠）
+                    </p>
+                    <a href="https://www.google.com/maps/place/24.98238,121.32477" class="post-link" target="_blank">地址：桃園市桃園區桃鶯路461號</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+    
+    <!-- 下方主視覺 -->
+    <div class="container-fluid p-0">
+      <figure class="m-0">
+        <img
+          src="images/down-image-page.webp"
+          class="img-fluid w-100 d-block"
+          width="1920" height="640"
+          alt="裝飾用圖片"
+          aria-describedby="downPosterInfo"
+          loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <footer class="footer-area">
+      <figure class="m-0">
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="images/footer-image-m.webp">
+          <img
+            src="images/footer-image.webp"
+            class="footer-img"
+            width="960"
+            height="200"
+            alt="頁尾贊助與主辦資訊"
+            loading="lazy"
+            decoding="async">
+        </picture>
+        <figcaption class="visually-hidden" id="footerInfo">
+          指導單位：桃園市政府、桃園市議會。主辦單位：桃園市政府觀光旅遊局。
+        </figcaption>
+      </figure>
+    </footer>
+    
+    <button id="backTop" class="backtop-btn" type="button" aria-label="回到頁面頂端" hidden>
+      <img src="images/backtop.webp" alt="" aria-hidden="true">
+      <span class="visually-hidden">回到頁面頂端</span>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+    
+  </body>
+
+
+</html>

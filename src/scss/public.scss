@@ -1,0 +1,103 @@
+@use "sass:math";
+@import "_/_Lib";
+@import "_/Core";
+@import "Lalilo";
+@import "_/Bootstrap";
+
+/* 色票可依設計調整 */
+$purple: #3c2474;        /* 背景 */
+$purple-deep: #2a1556;   /* 導覽底色 */
+$purple-deeper: #221040; /* Modal 底色 */
+$yellow: #FFF100;
+$light-purple: #9022D9;
+
+/* 內頁標題：外距 */
+.innerhead-area {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* 內頁標題：容器（相對定位以放裝飾） */
+.innerhead-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-image: url("../images/innerhead-arc.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 520px auto;
+}
+
+/* 左右木乃伊（裝飾） */
+.innerhead-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translateY(-50%);
+  background-image: url("../images/innerhead-mummy.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.innerhead-box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  transform: translateY(-50%) scaleX(-1);
+  background-image: url("../images/innerhead-mummy.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/* 標題文字（A 級：可見 h1） */
+.innerhead-title {
+  margin: 0;
+  color: $yellow;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 手機版（375 起）：縮小裝飾與弧形 */
+@media (max-width: 767.98px) {
+  .innerhead-box {
+    min-height: 56px;
+    background-size: 360px auto;
+  }
+  .innerhead-box::before {
+    width: 48px;
+    height: 48px;
+  }
+  .innerhead-box::after {
+    width: 48px;
+    height: 48px;
+  }
+  .innerhead-title {
+    font-size: 22px;
+  }
+}
+
+/* 低動態偏好：移除轉場（若未用動畫可略） */
+@media (prefers-reduced-motion: reduce) {
+  .innerhead-box::after {
+    transition: none;
+  }
+  .innerhead-box::before {
+    transition: none;
+  }
+}
