@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>桃園萬聖城</title>
+    <link rel="icon" href="images/favicon.webp" type="image/svg+xml">
+    <link rel="stylesheet" href="css/index.css">
+    
+  </head>
+
+  <body>
+    <!-- 上方主視覺 -->
+    <div class="container-fluid p-0">
+      <figure class="m-0">
+        <!-- 用你的實際尺寸，避免版面跳動 -->
+        <img
+          src="images/top-image.webp"
+          class="img-fluid w-100 d-block"
+          width="1920" height="640"
+          alt="2025 桃園萬聖城主視覺：中央卡通蜘蛛，背景城堡與萬聖裝飾。"
+          aria-describedby="topPosterInfo"
+          fetchpriority="high" decoding="async">
+        <figcaption id="topPosterInfo" class="mt-2 visually-hidden">
+          <strong>2025 桃園萬聖城</strong>｜
+          <time datetime="2025-10-25">10/25</time>–<time datetime="2025-11-02">11/02</time>｜
+          桃園藝文廣場＆綠園道
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- 跳到主內容（鍵盤可用） -->
+    <a class="skip-link" href="#mainContent">跳到主內容</a>
+    <!-- 讓 sticky 判斷位置的錨點 -->
+    <div id="navAnchor" class="visually-hidden" aria-hidden="true"></div>
+
+    <!-- 桌機版主選單 -->
+    <div class="nav-wrap d-none d-md-block" id="navWrap">
+      <nav aria-label="主選單">
+        <div class="nav-hallo wrap-1200">
+          <ul class="nav-list" role="menubar" aria-label="萬聖主選單">
+            <li class="nav-item" role="none">
+              <a class="nav-link is-active" href="index.html" aria-current="page">
+                <img class="pumpkin"
+                     src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true"
+                     data-src="images/pumpkin.webp"
+                     data-hover="images/pumpkin-active.webp"
+                     data-active="images/pumpkin-active.webp">
+                最新消息
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="theme-activities.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="主題活動" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                主題活動
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="magic-stage.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="魔幻舞台" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                魔幻舞台
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="transport-info.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="交通資訊" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                交通資訊
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="partners.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="萬聖城盟友" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                萬聖城盟友
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="nearby-attractions.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="順遊景點" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                順遊景點
+              </a>
+            </li>
+            <li class="nav-item" role="none">
+              <a role="menuitem" class="nav-link" href="index-en.html">
+                <img
+                  class="pumpkin"
+                  src="images/pumpkin.webp"            
+                  alt="English" aria-hidden="true"
+                  data-src="images/pumpkin.webp"       
+                  data-hover="images/pumpkin-active.webp"  
+                  data-active="images/pumpkin-active.webp" 
+                >
+                English
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 手機版：兩顆按鈕（左：光箱選單 / 右：English） -->
+    <div class="mobile-bar d-md-none" aria-label="手機主選單列">
+      <div class="wrap-1200 px-3">
+        <div class="row g-3 py-2">
+          <div class="col-6 mt-0">
+            <button id="btnMenu" type="button" class="btn-pill w-100"
+                    data-bs-toggle="modal" data-bs-target="#menuModal" aria-haspopup="dialog"
+                    aria-controls="menuModal" aria-expanded="false">
+              <img class="pumpkin" src="images/pumpkin-active.webp" alt="" aria-hidden="true">
+              活動主選單
+            </button>
+          </div>
+          <div class="col-6 mt-0">
+            <a class="btn-pill w-100" href="index-en.html">
+              <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">
+              English
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 手機版光箱：Bootstrap Modal -->
+    <div class="modal fade modal-menu" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content bg-deeper-purple text-white">
+          <div class="modal-header border-0">
+            <h2 class="modal-title fs-5" id="menuModalLabel">活動主選單</h2>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="modal-list" role="menu" aria-label="手機選單">
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="index.html">
+                  <img class="pumpkin" src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true">最新消息
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="theme-activities.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="主題活動" aria-hidden="true">主題活動
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="magic-stage.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="魔幻舞台" aria-hidden="true">魔幻舞台
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="ttransport-info.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="交通資訊" aria-hidden="true">交通資訊
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="partners.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="萬聖城盟友" aria-hidden="true">萬聖城盟友
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="nearby-attractions.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="順遊景點" aria-hidden="true">順遊景點
+                </a>
+              </li>
+
+              <li role="none">
+                <a role="menuitem" class="modal-link" href="index-en.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="English" aria-hidden="true">English
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容 -->
+    <main id="mainContent" class="wrap-1200 py-5">
+      <!-- 精彩預告 -->
+      <section class="video-area mb-4" aria-labelledby="videoTitle">
+        <div class="wrap-1200">
+          <div class="video-box">
+            <h2 id="videoTitle" class="video-title">
+              <img src="images/icon01.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+              精彩預告
+            </h2>
+
+            <div class="text-white fs-2 text-center">網站建置中</div>
+
+            <!-- <div class="row g-4 video-list">
+              <div class="col-12 col-md-4">
+                <figure class="video-card m-0">
+                  <div class="ratio ratio-16x9">
+                    <iframe
+                      src="https://www.youtube.com/embed/k3Sjrq44bao?si=kxJZ0cavWau2a-AQ""
+                      title="精彩預告 1"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                  <figcaption class="visually-hidden">精彩預告 1：活動花絮與重點介紹</figcaption>
+                </figure>
+              </div>
+
+              <div class="col-12 col-md-4">
+                <figure class="video-card m-0">
+                  <div class="ratio ratio-16x9">
+                    <iframe
+                      src="https://www.youtube.com/embed/k3Sjrq44bao?si=kxJZ0cavWau2a-AQ""
+                      title="精彩預告 2"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                  <figcaption class="visually-hidden">精彩預告 2：主持人介紹與現場氛圍</figcaption>
+                </figure>
+              </div>
+
+              <div class="col-12 col-md-4">
+                <figure class="video-card m-0">
+                  <div class="ratio ratio-16x9">
+                    <iframe
+                      src="https://www.youtube.com/embed/k3Sjrq44bao?si=kxJZ0cavWau2a-AQ""
+                      title="精彩預告 3"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                  <figcaption class="visually-hidden">精彩預告 3：活動亮點彙整</figcaption>
+                </figure>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 最新消息 -->
+      <section class="news-area" aria-labelledby="newsTitle">
+        <div class="wrap-1200">
+          <div class="news-box">
+            <h2 id="newsTitle" class="news-head">
+              <img src="images/icon01.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+            最新消息
+            </h2>
+
+            <div class="text-white fs-2 text-center">網站建置中</div>
+            <!-- <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 27 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">可以吃的萬聖節！桃園萬聖城 開箱魔幻廚房特殊料理</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 24 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃園萬聖城假日免費接駁服務 搭乘就送限量萬聖小禮物！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 19 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃知道廣場萬聖出擊，10/21－10/22 活動送好禮！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 24 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃園萬聖城假日免費接駁服務 搭乘就送限量萬聖小禮物！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 19 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃知道廣場萬聖出擊，10/21－10/22 活動送好禮！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 24 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃園萬聖城假日免費接駁服務 搭乘就送限量萬聖小禮物！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 19 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃知道廣場萬聖出擊，10/21－10/22 活動送好禮！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 24 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃園萬聖城假日免費接駁服務 搭乘就送限量萬聖小禮物！</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="news-link" href="news-detail.html">
+              <div class="row align-items-center g-0">
+                <div class="col-8 col-md-auto mb-2 mb-md-0">
+                  <span class="news-date">2023 年 10 月 19 日</span>
+                </div>
+                <div class="col-4 col-md-auto d-flex justify-content-md-end">
+                  <img class="news-hand" src="images/hand.webp" alt="" aria-hidden="true">
+                </div>
+                <div class="col-12 col-md">
+                  <span class="news-title">桃知道廣場萬聖出擊，10/21－10/22 活動送好禮！</span>
+                </div>
+              </div>
+            </a> -->
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    
+    <!-- 下方主視覺 -->
+    <div class="container-fluid p-0">
+      <figure class="m-0">
+        <img
+          src="images/down-image.webp"
+          class="img-fluid w-100 d-block"
+          width="1920" height="640"
+          alt="2025 桃園萬聖城主視覺：中央巨型南瓜，兩側拱橋與鬼怪裝飾。"
+          aria-describedby="downPosterInfo"
+          loading="lazy" decoding="async">
+        <figcaption id="downPosterInfo" class="mt-2 visually-hidden">
+          <strong>2025 桃園萬聖城</strong>｜
+          <time datetime="2025-10-25">10/25</time>–<time datetime="2025-11-02">11/02</time>｜
+          平日 <time datetime="17:00">17:00</time>–<time datetime="21:00">21:00</time>｜
+          假日 <time datetime="12:00">12:00</time>–<time datetime="22:00">22:00</time>
+        </figcaption>
+      </figure>
+    </div>
+
+    <footer class="footer-area">
+      <figure class="m-0">
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="images/footer-image-m.webp">
+          <img
+            src="images/footer-image.webp"
+            class="footer-img"
+            width="960"
+            height="200"
+            alt="頁尾贊助與主辦資訊"
+            loading="lazy"
+            decoding="async">
+        </picture>
+        <figcaption class="visually-hidden" id="footerInfo">
+          指導單位：桃園市政府、桃園市議會。主辦單位：桃園市政府觀光旅遊局。
+        </figcaption>
+      </figure>
+    </footer>
+    
+    <button id="backTop" class="backtop-btn" type="button" aria-label="回到頁面頂端" hidden>
+      <img src="images/backtop.webp" alt="" aria-hidden="true">
+      <span class="visually-hidden">回到頁面頂端</span>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+    
+  </body>
+
+
+</html>

@@ -961,6 +961,11 @@ footer {
 .poi-panel {
   padding: 0 15px 15px 15px;
   height: 100%;
+
+  > a {
+    color: $yellow;
+    text-decoration: underline !important;
+  }
 }
 
 .poi-title {
