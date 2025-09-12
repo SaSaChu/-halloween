@@ -184,7 +184,7 @@
               </li>
 
               <li role="none">
-                <a role="menuitem" class="modal-link" href="ttransport-info.html">
+                <a role="menuitem" class="modal-link" href="transport-info.html">
                   <img class="pumpkin" src="images/pumpkin.webp" alt="交通資訊" aria-hidden="true">交通資訊
                 </a>
               </li>
@@ -215,7 +215,7 @@
     <!-- 主要內容 -->
     <main id="mainContent" class="wrap-1200 py-5">
       <section class="ptitle-area" aria-labelledby="ptitle">
-        <div class="wrap-1200 px-3">
+        <div class="wrap-1200 px-md-3">
           <div class="ptitle-box">
             <h1 id="ptitle" class="ptitle-title">交通資訊</h1>
           </div>
@@ -228,15 +228,281 @@
           <!-- 次選單 -->
           <article class="post-box mb-4">
             <!-- 標題 -->
-            <!-- <header class="post-header">
+            <header class="post-header">
               <h1 id="postTitle" class="post-title">
                 <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
-                活動介紹
+                萬聖城如何去？
               </h1>
-            </header> -->
+            </header>
 
-            <!-- 內文（可在其他頁共用 .post-body） -->
-            <div class="text-white fs-2 text-center">網站建置中</div>
+            <div class="post-body my-4">
+              <section class="busx-area" aria-labelledby="busxTitle">
+                <div class="wrap-1200 px-md-3">
+                  <!-- 假日接駁服務 -->
+                  <div class="busx-box mb-5">
+                    <header class="busx-head">
+                      <h2 id="busxTitle" class="busx-title">假日接駁服務</h2>
+                    </header>
+
+                    <div class="row g-3 my-4">
+                      <!-- 1) 接駁日期（桌機：1/2；手機：整行） -->
+                      <div class="col-12 col-md-6">
+                        <dl class="meta-item" aria-label="接駁日期">
+                          <dt class="meta-term">
+                            <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
+                            接駁日期
+                          </dt>
+                          <dd class="meta-text">
+                            114年10月25日、26日及11月1日、2日
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <!-- 2) 接駁時間（桌機：1/2；手機：整行） -->
+                      <div class="col-12 col-md-6">
+                        <dl class="meta-item" aria-label="接駁時間">
+                          <dt class="meta-term">
+                            <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
+                            接駁時間
+                          </dt>
+                          <dd class="meta-text">
+                            上述各日 <time datetime="13:00">13：00</time> 至 <time datetime="22:30">22：30</time>
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <!-- 3) 接駁站點（整行） -->
+                      <div class="col-12">
+                        <dl class="meta-item" aria-label="接駁站點">
+                          <dt class="meta-term">
+                            <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
+                            接駁站點
+                          </dt>
+                          <dd class="meta-text">
+                            新永和市場、桃客總站及中正藝文特區（會場）
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <!-- 4) 接駁路線（整行） -->
+                      <div class="col-12">
+                        <dl class="meta-item" aria-label="接駁路線">
+                          <dt class="meta-term">
+                            <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
+                            接駁路線
+                          </dt>
+                          <dd class="meta-text">
+                            2條路線接駁，每日計10輛甲類大客車行駛，共計40輛。
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+
+                    <!-- 去程 / 返程 + 各自的海報：同一欄位內垂直堆疊 -->
+                    <div class="row g-3 g-md-4">
+                      <!-- 左欄：去程 -->
+                      <div class="col-12 col-md-6">
+                        <div class="busx-col">
+                          <article class="busx-card mb-4" aria-labelledby="busxGo">
+                            <h3 id="busxGo" class="busx-subttl">新永和市場往返會場</h3>
+                            <dl class="busx-dl">
+                              <div class="busx-row">
+                                <dt>發車間距：</dt>
+                                <dd>約 15～20 分鐘一班</dd>
+                              </div>
+                            </dl>
+                            <hr class="busx-hr busx-hr--dot" role="presentation">
+                            <dl class="busx-dl">
+                              <div class="busx-row">
+                                <dt>車輛規劃：</dt>
+                                <dd>5 輛甲類大客車</dd>
+                              </div>
+                            </dl>
+                          </article>
+
+                          <figure class="m-0">
+                            <img
+                              src="images/transport/t01.webp"
+                              class="img-fluid busx-img"
+                              loading="lazy"
+                              alt="藝文廣場⇄新永和市場 接駁車時刻表（藝文廣場發車）">
+                            <figcaption class="visually-hidden">藝文廣場發車時刻表。</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+
+                      <!-- 右欄：返程 -->
+                      <div class="col-12 col-md-6">
+                        <div class="busx-col">
+                          <article class="busx-card mb-4" aria-labelledby="busxBack">
+                            <h3 id="busxBack" class="busx-subttl">桃客總站往返會場</h3>
+                            <dl class="busx-dl">
+                              <div class="busx-row">
+                                <dt>發車間距：</dt>
+                                <dd>約 15～20 分鐘一班</dd>
+                              </div>
+                            </dl>
+                            <hr class="busx-hr busx-hr--dot" role="presentation">
+                            <dl class="busx-dl">
+                              <div class="busx-row">
+                                <dt>車輛規劃：</dt>
+                                <dd>5 輛甲類大客車</dd>
+                              </div>
+                            </dl>
+                          </article>
+
+                          <figure class="m-0">
+                            <img
+                              src="images/transport/t02.webp"
+                              class="img-fluid busx-img"
+                              loading="lazy"
+                              alt="新永和市場⇄藝文廣場 接駁車時刻表（新永和市場發車）">
+                            <figcaption class="visually-hidden">新永和市場發車時刻表。</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 接駁站點規劃 -->
+                    <section class="busx-stations" aria-labelledby="busxStations">
+                      <h3 id="busxStations" class="busx-stit">接駁站點規劃</h3>
+                      <div class="row g-3 g-md-4">
+                        <div class="col-12 col-md-4">
+                          <figure class="busx-spot m-0">
+                            <img
+                              src="images/transport/ts01.webp"
+                              class="img-fluid busx-spotimg"
+                              loading="lazy"
+                              alt="南平中正路口（會場）接駁站點外觀與候車亭。">
+                            <figcaption class="busx-spotcap"><span class="busx-dot" aria-hidden="true"></span>南平中正路口(會場)</figcaption>
+                          </figure>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <figure class="busx-spot m-0">
+                            <img
+                              src="images/transport/ts02.webp"
+                              class="img-fluid busx-spotimg"
+                              loading="lazy"
+                              alt="南平中正路口（會場）接駁站點停靠示意。">
+                            <figcaption class="busx-spotcap"><span class="busx-dot" aria-hidden="true"></span>新永和市場停車場</figcaption>
+                          </figure>
+                        </div>
+                        <div class="col-12 col-md-4">
+                          <figure class="busx-spot m-0">
+                            <img
+                              src="images/transport/ts03.webp"
+                              class="img-fluid busx-spotimg"
+                              loading="lazy"
+                              alt="南平中正路口（會場）周邊道路與等候區。">
+                            <figcaption class="busx-spotcap"><span class="busx-dot" aria-hidden="true"></span>桃客總站旁(暫定)</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <!-- 周邊停車空間 -->
+                  <div class="busx-box">
+                    <header class="busx-head">
+                      <h2 id="busxTitle" class="busx-title">周邊停車空間</h2>
+                    </header>
+
+                    <div class="table-responsive">
+                      <table class="table sched-table align-middle w-100">
+                        <caption class="visually-hidden">停車資訊：位置、小型車格數、機車格數與備註</caption>
+                        <thead>
+                          <tr>
+                            <th scope="col">位置</th>
+                            <th scope="col" class="text-center">小型車格數</th>
+                            <th scope="col" class="text-center">機車格數</th>
+                            <th scope="col" class="text-center">備註</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- 路外停車（4 列） -->
+                          <tr>
+                            <th scope="row">圖書館總館停車場</th>
+                            <td data-label="小型車格數">401</td>
+                            <td data-label="機車格數">410</td>
+                            <td class="park-remark" rowspan="4">路外停車</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">展演中心地下停車場</th>
+                            <td data-label="小型車格數">88</td>
+                            <td data-label="機車格數">–</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">藝文北區停車場</th>
+                            <td data-label="小型車格數">216</td>
+                            <td data-label="機車格數">188</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">藝文南區停車場</th>
+                            <td data-label="小型車格數">301</td>
+                            <td data-label="機車格數">221</td>
+                          </tr>
+
+                          <!-- 假日開放（2 列） -->
+                          <tr>
+                            <th scope="row">同安國小</th>
+                            <td data-label="小型車格數">–</td>
+                            <td data-label="機車格數">61</td>
+                            <td class="park-remark" rowspan="2">假日開放</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">同德國小</th>
+                            <td data-label="小型車格數">–</td>
+                            <td data-label="機車格數">146</td>
+                          </tr>
+
+                          <!-- 路邊停車（6 列） -->
+                          <tr>
+                            <th scope="row">新埔六街 (南平路至大興西路)</th>
+                            <td data-label="小型車格數">61</td>
+                            <td data-label="機車格數">195</td>
+                            <td class="park-remark" rowspan="6">路邊停車</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">南平路 (新埔六街至中正路)</th>
+                            <td data-label="小型車格數">22</td>
+                            <td data-label="機車格數">75</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">中正路 (南平路至大興西路)</th>
+                            <td data-label="小型車格數">65</td>
+                            <td data-label="機車格數">186</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">大興西路一段 (中正路至新埔六街)</th>
+                            <td data-label="小型車格數">–</td>
+                            <td data-label="機車格數">53</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">同德六街 (新埔六街至中正路)</th>
+                            <td data-label="小型車格數">–</td>
+                            <td data-label="機車格數">49</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">同德五街(新埔六街至中正路)</th>
+                            <td data-label="小型車格數">–</td>
+                            <td data-label="機車格數">42</td>
+                          </tr>
+
+                          <!-- 小計 -->
+                          <!-- <tr>
+                            <th scope="row">小計</th>
+                            <td data-label="小型車格數">1154</td>
+                            <td data-label="機車格數">1626</td>
+                            <td aria-hidden="true"></td>
+                          </tr> -->
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+            </div>
           </article>
         </div>
       </section>
