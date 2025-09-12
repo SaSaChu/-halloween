@@ -648,7 +648,6 @@ a {
   border: 0;
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -681,6 +680,18 @@ a {
   }
 }
 
+@media (min-width: 992px) {
+  .backtop-btn {
+    width: 75px;
+    height: 75px;
+  }
+  .backtop-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
 
 @media (max-width: 767.98px) {
   .backtop-btn {
@@ -827,7 +838,7 @@ footer {
 /* 內文連結：黃色底線 */
 .post-body a,
 .post-link {
-  /*color: $yellow;*/
+  color: $yellow; 
   text-decoration: underline;
   text-decoration-color: $yellow;
   text-underline-offset: 3px;
@@ -1590,4 +1601,48 @@ footer {
 /* 交通資訊 結束 */
 
 
+/* 主題活動 開始 */
+.market-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 10px 28px;
+  border-radius: 9999px;
+  background-color: $yellow;
+  color: #111111 !important;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 0;
+  transition: background-color .18s ease, color .18s ease, box-shadow .18s ease;
+
+  .bi {
+    font-size: 1.2em;
+    line-height: 1;
+  }
+
+  &:hover {
+    background-color: $cta-green;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: black !important;
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #111111;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #111111;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+/* 主題活動 結束 */
 
