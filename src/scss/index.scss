@@ -29,6 +29,13 @@ body.menu-opening .video-area iframe { pointer-events: none; }
 a {
   text-decoration: none !important;
 }
+
+/* ---- anchor 修正：用 sticky 導覽列高度當位移 ---- */
+:root { --nav-h: 0px; }
+
+/* 讓瀏覽器的「預設錨點捲動」就會留出空間；多＋12px 緩衝 */
+[id] { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
 /* 按鈕 開始 */
 .cta-area {
   padding-top: 8px;

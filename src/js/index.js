@@ -71,6 +71,22 @@ $(function () {
     else mqDesktop.addListener(handleMQ);
   })();
 
+  /* ==== ★ 新增 2-1) 量測 nav 高度，寫入 CSS 變數供錨點位移用 ==== */
+  (function anchorOffsetVar() {
+    const nav = document.querySelector('#navWrap');
+    if (!nav) return;
+    const setVar = () => {
+      const h = nav.offsetHeight || 0;
+      document.documentElement.style.setProperty('--nav-h', h + 'px');
+    };
+    setVar();
+    window.addEventListener('resize', setVar);
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(setVar);
+      ro.observe(nav);
+    }
+  })();
+
   // 3) 手機：更新 aria-expanded + 視覺選中態（左鍵）
   const $btnMenu = $('#btnMenu');
   $('#menuModal')
@@ -211,5 +227,46 @@ $(function () {
 
   // 10) liveinfo 卡片：可鍵盤巡覽
   $('.liveinfo-card').attr('tabindex', '0');
+
+  /* ==== ★ 新增 11) 所有頁內錨點，捲動時扣掉導覽列高度 ==== */
+  $(document).on('click', 'a[href^="#"]:not([href="#"])', function (e) {
+    // 避開 Bootstrap 元件觸發（modal、collapse…）
+    if (this.hasAttribute('data-bs-toggle')) return;
+
+    const id = decodeURIComponent(this.hash.slice(1));
+    const target = document.getElementById(id);
+    if (!target) return; // 不是本頁錨點就放行
+
+    e.preventDefault();
+
+    const nav = document.querySelector('#navWrap');
+    const navH = nav ? nav.offsetHeight : 0;
+    const gap  = 12; // 不要貼邊
+    const y = target.getBoundingClientRect().top + window.scrollY - navH - gap;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+
+    // 無障礙：焦點跟到目標
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  });
+
+  // ★ 新增 12) 以 #hash 直接載入時，同步補償一次
+  $(window).on('load', function () {
+    if (!location.hash) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const nav = document.querySelector('#navWrap');
+    const navH = nav ? nav.offsetHeight : 0;
+    const gap  = 12;
+    const y = target.getBoundingClientRect().top + window.scrollY - navH - gap;
+
+    window.scrollTo(0, y);
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  });
 
 });
