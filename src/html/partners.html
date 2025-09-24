@@ -228,15 +228,287 @@
           <!-- 次選單 -->
           <article class="post-box mb-4">
             <!-- 標題 -->
-            <!-- <header class="post-header">
+            <header class="post-header">
               <h1 id="postTitle" class="post-title">
                 <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
-                活動介紹
+                討糖地圖
               </h1>
-            </header> -->
+            </header>
 
-            <!-- 內文（可在其他頁共用 .post-body） -->
-            <div class="text-white fs-2 text-center">網站建置中</div>
+            <div class="post-body">
+              <div class="wrap-1200 px-3 pb-5">
+                <figure class="map-figure mb-3">
+                  <!-- 使用 Bootstrap .ratio 做 RWD，高寬自適應 -->
+                  <div class="ratio ratio-16x9 rounded-3 overflow-hidden"
+                       role="group"
+                       aria-labelledby="mapCaption">
+                    <iframe
+                      src="https://www.google.com/maps/d/u/2/embed?mid=12wBD7NRDcjUUYMqM_e8vZjM11LgS67A&ehbc=2E312F"
+                      title="2025桃園萬聖城 活動地圖（Google My Maps，可放大與拖曳）"
+                      aria-describedby="mapCaption"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      style="border:0; width:100%; height:100%;">
+                    </iframe>
+                  </div>
+                  <figcaption id="mapCaption" class="visually-hidden">
+                    互動式地圖顯示 2025 桃園萬聖城活動地點與路線。若無法操作，請使用下方「在 Google 地圖開啟」連結。
+                  </figcaption>
+                </figure>
+
+                <!-- 替代操作：鍵盤/輔助科技可直接開新視窗 -->
+                <p class="mb-0">
+                  <a class="btn-pill modal-link d-inline-flex align-items-center gap-2"
+                     href="https://www.google.com/maps/d/u/2/viewer?mid=12wBD7NRDcjUUYMqM_e8vZjM11LgS67A&ehbc=2E312F"
+                     target="_blank" rel="noopener"
+                     aria-label="在新視窗開啟 2025桃園萬聖城 活動地圖（Google 地圖）">
+                    <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                    在 Google 地圖開啟
+                  </a>
+                </p>
+              </div>
+
+              <!-- 桃園市民卡APP集章辦法 -->
+              <section class="liveinfo-area" aria-labelledby="civTitle">
+                <div class="wrap-1200 px-3">
+                  <!-- 區塊容器 -->
+                  <div class="rule-card mb-4" role="region" aria-labelledby="civTitle">
+                    <!-- 紫色抬頭條 -->
+                    <h2 id="civTitle" class="rule-title">
+                      桃園市民卡APP集章辦法－2025桃園萬聖城
+                    </h2>
+
+                    <!-- 兩欄：日期 / 地點（桌機並排、手機直式） -->
+                    <div class="row gy-2 gx-3 mb-1 align-items-start">
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">活動日期</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            2025/10/25（六）～ 2025/11/02（日）
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">活動地點</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            2025桃園萬聖城合作店家
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+
+                    <!-- 規則標籤 + 內容 -->
+                    <dl class="row g-2 liveinfo-dl mb-0">
+                      <dt class="col-auto me-2">
+                        <span class="tag-pill tag-orange">活動規則</span>
+                      </dt>
+                      <dd class="col-md col-12 liveinfo-dd text-black">
+
+                        <!-- 依圖面：每條開頭需留空、使用中文數字「一、二、…」 -->
+                        <ol class="cn-ol">
+                          <li>
+                            <span class="rule-item">
+                              <b>活動期間：</b>2025/10/25（六）－ 2025/11/02（日）
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>活動地點：</b>2025桃園萬聖城合作店家
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>活動方式：</b><br>
+                              01. 活動期間，完成以下步驟即可參加抽獎：下載並開啟「桃園市民卡APP」，至合作店家參與集章/集點系列活動，掃描現場提供之 QRCode，即可獲得 1 枚集章。每人限領 3 次，活動期滿累積滿 27 枚章，兌換一次抽獎機會。<br>
+                              02. 憑 APP 內累積之「兌獎券」至指定兌換處，即可兌換指定獎券或抽獎券。<br>
+                              03. 抽獎說明：活動期間以「桃園市民卡APP」進行分組登記抽獎與查詢。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>抽獎資格：</b>持桃園市民卡之市民皆可參加（不限設籍、居住或就學）。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>注意事項：</b>每人每日限兌一次，贈品數量有限，送完為止。若遇人潮眾多，請耐心排隊並遵循現場人員指示。
+                            </span>
+                          </li>
+                        </ol>
+
+                        <p class="rule-foot small mb-0">
+                          ※ 本活動以現場公告為準；主辦單位保留活動及獎項更動之權利。
+                        </p>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 活動抽現金 -->
+              <section class="liveinfo-area" aria-labelledby="civTitle">
+                <div class="wrap-1200 px-3">
+                  <!-- 區塊容器 -->
+                  <div class="rule-card mb-4" role="region" aria-labelledby="civTitle">
+                    <!-- 紫色抬頭條 -->
+                    <h2 id="civTitle" class="rule-title">
+                      活動抽現金
+                    </h2>
+
+                    <!-- 兩欄：日期 / 地點（桌機並排、手機直式） -->
+                    <div class="row gy-2 gx-3 mb-1 align-items-start">
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">活動日期</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            2025/10/24(五) ~ 2025/11/02(日)
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">活動地點</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            桃園藝文廣場
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+
+                    <!-- 兩欄：日期 / 地點（桌機並排、手機直式） -->
+                    <div class="row gy-2 gx-3 mb-1 align-items-start">
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">活動時間</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            平日：17:00－21:00&nbsp;&nbsp;|&nbsp;&nbsp;假日：12:00－22:00
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <div class="col-md-6">
+                        <dl class="row g-2 liveinfo-dl mb-0">
+                          <dt class="col-auto me-2">
+                            <span class="tag-pill tag-orange">投入地點</span>
+                          </dt>
+                          <dd class="col-md col-12 liveinfo-dd text-black">
+                            藝文廣場 大會服務台摸彩箱
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <!-- 摸彩時間 -->
+                      <dl class="row g-2 liveinfo-dl">
+                        <dt class="col-auto me-2">
+                          <span class="tag-pill tag-orange">摸彩時間</span>
+                        </dt>
+                        <dd class="col-md col-12 liveinfo-dd text-black">
+                          <ol class="ol-latin mb-0 ps-3">
+                            <li>平日最後投入時間：20:45、抽出時間：20:55</li>
+                            <li>假日最後投入時間：21:15、抽出時間：21:25</li>
+                          </ol>
+                        </dd>
+                      </dl>
+
+                      <!-- 獎項內容 -->
+                      <dl class="row g-2 liveinfo-dl">
+                        <dt class="col-auto me-2">
+                          <span class="tag-pill tag-orange">獎項內容</span>
+                        </dt>
+                        <dd class="col-md col-12 liveinfo-dd text-black">
+                          <ol class="ol-cjk mb-0 ps-5">
+                            <li>現金新臺幣10,000元（每日1名）</li>
+                            <li>桃園萬聖城紀念背包（每日5名）</li>
+                          </ol>
+                        </dd>
+                      </dl>
+                    </div>
+
+                    <!-- 規則標籤 + 內容 -->
+                    <dl class="row g-2 liveinfo-dl mb-0">
+                      <dt class="col-auto me-2">
+                        <span class="tag-pill tag-orange">抽獎券領取方式</span>
+                      </dt>
+                      <dd class="col-12 liveinfo-dd text-black">
+
+                        <!-- 依圖面：每條開頭需留空、使用中文數字「一、二、…」 -->
+                        <ol class="cn-ol">
+                          <li>
+                            <span class="rule-item">
+                              <b>活動指定攤位消費：</b><br>
+                              01. 領取方式：於「發現金」標誌之攤位，累計消費滿新臺幣200元，即可兌換抽獎券1張。<br>
+                              02. 領取地點：各「發現金」標誌攤位。<br>
+                              03. 領券時間：2025年10月24日至11月2日，萬聖城活動期間內。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>桃園閱讀節：</b><br>
+                              01. 領取方式：憑桃園市立圖書館APP「閱讀存摺」點數30點，至桃園市立圖書館總館2樓服務櫃台，即可兌換抽獎券1張及折價券10元1張。<br>
+                               02. 領取地點：桃園市立圖書館總館2樓服務櫃台。<br>
+                               03. 領券時間：2025年10月24日至11月2日，依總館營業時間辦理。<br>
+                               04. 折價券方式：萬聖城活動期間內，於藝文廣場主題專賣店使用，一項商品限折抵一張。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>鐵玫瑰藝術節：</b><br>
+                              01. 領取方式：憑2025桃園鐵玫瑰藝術節票券證明(紙本或電子)，至桃園萬聖城服務台，即可兌換抽獎券1張及折價券10元1張。<br>
+                              02. 領取地點：桃園萬聖城服務台。<br>
+                              03. 領券時間：2025年10月24日至11月2日，萬聖城活動期間內。<br>
+                              04. 折價券方式：萬聖城活動期間內，於藝文廣場主題專賣店使用，一項商品限折抵一張。 
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>抽獎方式：</b><br>
+                              01. 參加者須於抽獎券上填寫姓名、電話等完整資料，並於指定時間前投入摸彩箱，逾時不受理。<br>
+                              02. 平日預計於20時55分開始抽獎；假日預計於21時25分開始抽獎（實際時間將依現場狀況調整）。<br>
+                              03. 中獎者須於現場，並持抽獎券存根聯及身分證明文件辦理領獎手續。<br>
+                              04. 現場唱名3次未回應或不在場者，視同放棄並喪失得獎資格，該獎項將立即重新抽出，原摸彩券不再放回箱內。<br>
+                              05. 得獎者須妥善保存抽獎券存根聯，若遺失則喪失領獎資格。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>注意事項：</b><br>
+                              01. 每人每日不限投入抽獎券張數，但同一人不得重複領取當日同獎項，當日未中獎之抽獎券將作廢處理。<br>
+                              02. 領獎時須出示活動抽獎券存根聯以供核對，若資料不符或不完整，主辦單位有權取消得獎資格。<br>
+                              03. 現金獎項依法須申報所得稅，得獎者須依相關規定辦理。<br>
+                              04. 活動如遇不可抗力因素，主辦單位得保留修改、暫停或終止活動之權利，並以現場或官方公告為準。<br>
+                              05. 參加活動即視為同意遵守本活動辦法之相關規範。
+                            </span>
+                          </li>
+                          <li>
+                            <span class="rule-item">
+                              <b>得獎及稅務相關事宜：</b><br>
+                              01. 依中華民國所得稅法規定，得獎獎品或獎金金額達新臺幣20,000元以上，得獎者必須依規定扣繳10%中獎所得稅額，始得領獎；中獎人如為外籍（即在中華民國境內居住未達183天之本國人及外國人）改依規定扣繳獎金20%稅率。<br>
+                              02. 依中華民國稅法規定，獎項金額若超過新臺幣1,000元，獎項所得應列入個人年度綜合所得稅申報。<br>
+                              03. 中獎人如為外籍（即在中華民國境內居住未達183天之本國人及外國人）改依規定扣繳獎金20%稅率。<br>
+                              04. 得獎人需依規定填寫並繳交相關單據方可領獎。若不願意配合，則視為自動棄權，不具得獎資格。
+                            </span>
+                          </li>
+                        </ol>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </section>
+
+            </div>
           </article>
         </div>
       </section>

@@ -1719,3 +1719,90 @@ footer {
 }
 
 /* 主題活動 結束 */
+
+// 萬聖節盟友 開始
+
+.map-figure {
+  .ratio { border-radius: 1rem; }  // 搭配 .rounded-3 也可
+  iframe { border: 0; width: 100%; height: 100%; }
+}
+
+/* 外框卡片（依照圖面：紫底圓角 + 邊框 + 內距） */
+.rule-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 16px 20px;
+}
+
+/* 頂部抬頭條 */
+.rule-title {
+  background: #6e3bd6;         /* 視覺紫 */
+  color: #fff;
+  font-size: clamp(18px, 2.4vw, 20px);
+  line-height: 1.4;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 0 0 14px 0;
+  font-weight: 700;
+}
+
+/* 活動規則（中文編號 + 開頭留空的懸掛縮排） */
+.cn-ol {
+  counter-reset: cjk;
+  list-style: none;
+  margin: 0 0 6px 0;
+  padding: 0;
+}
+.cn-ol > li {
+  counter-increment: cjk;
+  position: relative;
+  padding-left: 2.25em;     /* 留空寬度（依圖面） */
+  margin-bottom: .5rem;
+}
+.cn-ol > li::before {
+  content: counter(cjk, cjk-ideographic) "、";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+/* 每條規則的內容，讓粗體標籤與後文易讀 */
+.rule-item b {
+  font-weight: 700;
+}
+
+/* 補充說明（最下行） */
+.rule-foot {
+  opacity: .85;
+}
+
+/* RWD：小螢幕維持良好行距與間距 */
+@media (max-width: 576px) {
+  .rule-card { padding: 12px; }
+  .rule-title { font-size: 18px; padding: 8px 12px; }
+  .cn-ol > li { padding-left: 2em; }
+}
+
+/* 阿拉伯數字清單：1. 2. … */
+.ol-latin{
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+
+/* 中文序列清單：（一）（二）…  */
+.ol-cjk{
+  list-style: none;
+  padding-left: 1.25rem;
+  counter-reset: cjk;
+  > li{
+    counter-increment: cjk;
+  }
+  > li::marker{
+    content: '（' counter(cjk, cjk-ideographic) '） ';
+  }
+}
+
+
+// 萬聖節盟友 結束
+
+
