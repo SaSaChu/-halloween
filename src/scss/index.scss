@@ -30,6 +30,23 @@ a {
   text-decoration: none !important;
 }
 
+.text-orange {
+  color:#ff7a3d
+}
+.text-yellow {
+  color:$yellow ;
+}
+.brown-title {
+  background-color: #D3BE1E;
+  color: #fff;
+  font-weight: 800;
+  border: 0;
+  background-clip: padding-box;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 0 !important;
+}
+
 /* ---- anchor 修正：用 sticky 導覽列高度當位移 ---- */
 :root { --nav-h: 0px; }
 
@@ -205,7 +222,12 @@ a {
   font-weight: 500;
   letter-spacing: .02em;
   outline-offset: 2px;
+  /*font-size: 1rem;*/
   font-size: 1.23rem;
+
+  &.-en {
+    font-size: 1rem;
+  }
 
   /* 進場掉落動畫的起點 */
   transform: translateY(-16px);
@@ -1099,7 +1121,7 @@ footer {
 .sched-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 16px 12px;  /* 水平 16 / 垂直 12 的空隙 */
+  border-spacing: 10px 8px;  /* 水平 16 / 垂直 12 的空隙 */
 }
 
 /* 表頭 */
@@ -1651,5 +1673,49 @@ footer {
     transform: translateY(1px);
   }
 }
-/* 主題活動 結束 */
 
+/* 任務規則卡片 */
+.task-card {
+  background: #FFF4E5;          /* 柔和米杏色，對照設計稿 */
+  border-radius: 1rem;
+}
+
+.task-steps {                   /* 用自訂圓形數字，關閉原生序號 */
+  list-style: none;
+  padding-left: 0;
+}
+
+.num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #6f42c1;          /* 無障礙對比的紫色 */
+  color: #fff;
+  font-weight: 700;
+  margin-right: .5rem;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.note-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  /* 01. 02. 的視覺縮排 */
+  li {
+    padding-left: 2ch;
+    text-indent: -2ch;
+    line-height: 1.6;
+  }
+}
+
+/* RWD 微調（可選） */
+@media (min-width: 768px) {
+  .task-card { padding: 1.25rem 1.5rem; }
+}
+
+/* 主題活動 結束 */
