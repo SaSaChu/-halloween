@@ -1802,6 +1802,22 @@ footer {
   }
 }
 
+/* 嵌入 My Maps：視覺裁切上方標題列 */
+.map-embed {
+  /* 估算 My Maps 標題列高度；可視覺調整 56~64px */
+  --map-header-h: 60px;
+}
+.map-embed > iframe {
+  /* Bootstrap .ratio 會把子元素設成絕對定位、100% 寬高。
+     這裡在不破壞 RWD 的前提下，往上位移並把高度加長 */
+  height: calc(100% + var(--map-header-h));
+  transform: translateY(calc(var(--map-header-h) * -1));
+  /* 輔助：避免意外外框 */
+  border: 0;
+}
+@media (max-width: 575.98px) {
+  .map-embed { --map-header-h: 56px; } /* 手機上通常略矮一點 */
+}
 
 // 萬聖節盟友 結束
 

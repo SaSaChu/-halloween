@@ -237,24 +237,23 @@
 
             <div class="post-body">
               <div class="wrap-1200 px-3 pb-5">
-                <figure class="map-figure mb-3">
-                  <!-- 使用 Bootstrap .ratio 做 RWD，高寬自適應 -->
-                  <div class="ratio ratio-16x9 rounded-3 overflow-hidden"
-                       role="group"
-                       aria-labelledby="mapCaption">
-                    <iframe
-                      src="https://www.google.com/maps/d/u/2/embed?mid=12wBD7NRDcjUUYMqM_e8vZjM11LgS67A&ehbc=2E312F"
-                      title="2025桃園萬聖城 活動地圖（Google My Maps，可放大與拖曳）"
-                      aria-describedby="mapCaption"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      style="border:0; width:100%; height:100%;">
-                    </iframe>
-                  </div>
-                  <figcaption id="mapCaption" class="visually-hidden">
-                    互動式地圖顯示 2025 桃園萬聖城活動地點與路線。若無法操作，請使用下方「在 Google 地圖開啟」連結。
-                  </figcaption>
-                </figure>
+                <div class="ratio ratio-16x9 rounded-3 overflow-hidden map-embed"
+                   role="group"
+                   aria-labelledby="mapCaption">
+                <iframe
+                  src="https://www.google.com/maps/d/u/2/embed?mid=12wBD7NRDcjUUYMqM_e8vZjM11LgS67A&ehbc=2E312F"
+                  title="2025桃園萬聖城 活動地圖（Google My Maps，可放大與拖曳）"
+                  aria-describedby="mapCaption"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  style="border:0; width:100%; height:100%;">
+                </iframe>
+              </div>
+
+              <small id="mapCaption" class="visually-hidden">
+                互動地圖：可用方向鍵移動、加減號縮放；另提供「在新視窗開啟完整地圖」連結。
+              </small>
+
 
                 <!-- 替代操作：鍵盤/輔助科技可直接開新視窗 -->
                 <p class="mb-0">
