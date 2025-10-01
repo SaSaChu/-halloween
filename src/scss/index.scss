@@ -1822,3 +1822,43 @@ footer {
 // 萬聖節盟友 結束
 
 
+/* 連續雙色膠囊標題 */
+.poi-ribbon{
+  display:flex;
+  align-items:center;
+  border-radius: 8px;      /* 大圓角 */
+  overflow:hidden;             /* 讓左右兩段和外框一起圓角 */
+  color:#fff;
+  font-weight: 800;
+  line-height:1.15;
+  margin: 0 0 .9rem;
+  font-size: 22px;
+  letter-spacing:.02em;
+}
+
+/* 左側橘色段（固定貼字寬度） */
+.poi-ribbon__kicker{
+  background: #ea6f3a;         /* 橘 */
+  /*padding: .85rem 1.25rem;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* 右側紫色段（自動延伸） */
+.poi-ribbon__title{
+  background: #6f38a6;         /* 紫 */
+  /*padding: .85rem 1.25rem;*/
+  line-height: 1.3;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: 1 1 auto;              /* 右段撐滿 */
+  min-width: 10ch;
+}
+
+

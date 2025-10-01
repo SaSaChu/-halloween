@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>桃園萬聖城 | 交通資訊</title>
-    <link rel="icon" href="images/favicon.webp" type="image/svg+xml">
+    <link rel="icon" href="images/favicon.webp" type="image/webp">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
 
   <body>
@@ -194,7 +195,7 @@
                       </h3>
                     </header>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" role="region" aria-label="公車資訊表，可左右捲動" tabindex="0">
                       <table class="table sched-table align-middle w-100">
                         <caption class="visually-hidden">公車資訊：來源站點與可搭乘公車號碼</caption>
                         <thead>
@@ -214,6 +215,7 @@
                           <tr><th scope="row">台北捷運行天宮站</th><td>1662</td></tr>
                         </tbody>
                       </table>
+                      <a href="https://ebus.tycg.gov.tw/ebus/driving-map?route-group=cityBus" target="_blank" class="fs-4 px-2 link-info"><i class="bi bi-bus-front me-：1"></i>：桃園公車動態資訊</a>
                     </div>
                   </div>
                   
@@ -224,7 +226,7 @@
                     </header>
 
                     <div class="row g-3 my-4">
-                      <!-- 1) 接驛日期 -->
+                      <!-- 1) 接駁日期 -->
                       <div class="col-12">
                         <dl class="meta-item" aria-label="接駁日期">
                           <dt class="meta-term">
@@ -232,7 +234,7 @@
                             接駁日期
                           </dt>
                           <dd class="meta-text">
-                            2025年10月25日、26日及11月1日、2日
+                            2025年10月24日(五)、10月25日(六)、10月26日(日)及11月1日(六)、11月2日(日)
                           </dd>
                         </dl>
                       </div>
@@ -245,33 +247,30 @@
                             接駁時間
                           </dt>
                           <dd class="meta-text">
-                            上述各日 <time datetime="13:00">13：00</time> 至 <time datetime="22:30">22：30</time>（15-20分鐘一班）
+                            上述各日 <time datetime="12:00">12：00</time> 至 <time datetime="22:30">22：30</time>（15-20分鐘一班）
                           </dd>
                         </dl>
                       </div>
 
-                      <!-- 3) 接駁起點 -->
-                      <div class="col-12 col-md-6">
-                        <dl class="meta-item" aria-label="接駁起點">
+                      <!-- 3) 接駁時間 -->
+                      <div class="col-12">
+                        <dl class="meta-item" aria-label="接駁時間">
                           <dt class="meta-term">
                             <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
-                            接駁起點
+                            接駁站點
                           </dt>
                           <dd class="meta-text">
-                            新永和市場、桃園客運總站 
+                            新永和市場、桃園火車站(萬壽路出口)、桃園藝文廣場
                           </dd>
                         </dl>
                       </div>
 
-                      <!-- 4) 接駁終點 -->
-                      <div class="col-12 col-md-6">
-                        <dl class="meta-item" aria-label="接駁終點">
-                          <dt class="meta-term">
-                            <img src="images/transport/bus-icon.svg" class="meta-badge" alt="" aria-hidden="true">
-                            接駁終點
-                          </dt>
+                      <!-- 4) 接駁時間 -->
+                      <div class="col-12">
+                        <dl class="meta-item" aria-label="接駁時間">
                           <dd class="meta-text">
-                            中正藝文特區（活動會場）
+                            ※新永和市場、桃園火車站(萬壽路出口)往桃園藝文廣場末班車時間為21:30</br>
+                            ※桃園藝文廣場回程末班車時間為22:30
                           </dd>
                         </dl>
                       </div>
@@ -286,14 +285,14 @@
       </section>
     </main>
     
-    <!-- 下方主視覺（移除不存在的 aria-describedby） -->
+    <!-- 下方主視覺（裝飾圖，alt 置空） -->
     <div class="container-fluid p-0">
       <figure class="m-0">
         <img
           src="images/down-image-page.webp"
           class="img-fluid w-100 d-block"
           width="1920" height="640"
-          alt="裝飾用圖片"
+          alt=""
           loading="lazy" decoding="async">
       </figure>
     </div>
@@ -315,6 +314,19 @@
           指導單位：桃園市政府、桃園市議會。主辦單位：桃園市政府觀光旅遊局。
         </figcaption>
       </figure>
+      <figure class="m-0">
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="images/footer-image-2-m.webp">
+          <img
+            src="images/footer-image-2.webp"
+            class="footer-img"
+            width="1200"
+            height="200"
+            alt="頁尾贊助與主辦資訊"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </figure>
     </footer>
     
     <button id="backTop" class="backtop-btn" type="button" aria-label="回到頁面頂端" hidden>
@@ -324,6 +336,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>

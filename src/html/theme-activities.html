@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>桃園萬聖城 | 主題活動</title>
-    <link rel="icon" href="images/favicon.webp" type="image/svg+xml">
+    <link rel="icon" href="images/favicon.webp" type="image/webp">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
   </head>
 
   <body>
+    <!-- 跳到主內容（鍵盤可用） -->
+    <a class="skip-link" href="#mainContent">跳到主內容</a>
+
     <!-- 上方主視覺 -->
     <div class="container-fluid p-0">
       <figure class="m-0">
@@ -31,32 +34,30 @@
       </figure>
     </div>
 
-    <!-- 跳到主內容（鍵盤可用） -->
-    <a class="skip-link" href="#mainContent">跳到主內容</a>
     <!-- 讓 sticky 判斷位置的錨點 -->
     <div id="navAnchor" class="visually-hidden" aria-hidden="true"></div>
 
-    <!-- 桌機版主選單 -->
+    <!-- 桌機版主選單（移除 menubar/menuitem 角色） -->
     <div class="nav-wrap d-none d-md-block" id="navWrap">
       <nav aria-label="主選單">
         <div class="nav-hallo wrap-1200">
-          <ul class="nav-list" role="menubar" aria-label="萬聖主選單">
-            <li class="nav-item" role="none">
+          <ul class="nav-list" aria-label="萬聖主選單">
+            <li class="nav-item">
               <a class="nav-link" href="index.html">
                 <img class="pumpkin"
-                     src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true"
+                     src="images/pumpkin-active.webp" alt="" aria-hidden="true"
                      data-src="images/pumpkin.webp"
                      data-hover="images/pumpkin-active.webp"
                      data-active="images/pumpkin-active.webp">
                 最新消息
               </a>
             </li>
-            <li class="nav-item" role="none">
+            <li class="nav-item">
               <a class="nav-link is-active" href="theme-activities.html" aria-current="page">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="主題活動" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -64,12 +65,12 @@
                 主題活動
               </a>
             </li>
-            <li class="nav-item" role="none">
-              <a role="menuitem" class="nav-link" href="magic-stage.html">
+            <li class="nav-item">
+              <a class="nav-link" href="magic-stage.html">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="魔幻舞台" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -77,12 +78,12 @@
                 魔幻舞台
               </a>
             </li>
-            <li class="nav-item" role="none">
-              <a role="menuitem" class="nav-link" href="transport-info.html">
+            <li class="nav-item">
+              <a class="nav-link" href="transport-info.html">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="交通資訊" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -90,12 +91,12 @@
                 交通資訊
               </a>
             </li>
-            <li class="nav-item" role="none">
-              <a role="menuitem" class="nav-link" href="partners.html">
+            <li class="nav-item">
+              <a class="nav-link" href="partners.html">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="萬聖城盟友" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -103,12 +104,12 @@
                 萬聖城盟友
               </a>
             </li>
-            <li class="nav-item" role="none">
-              <a role="menuitem" class="nav-link" href="nearby-attractions.html">
+            <li class="nav-item">
+              <a class="nav-link" href="nearby-attractions.html">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="順遊景點" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -116,12 +117,12 @@
                 順遊景點
               </a>
             </li>
-            <li class="nav-item" role="none">
-              <a role="menuitem" class="nav-link" href="index-en.html">
+            <li class="nav-item">
+              <a class="nav-link" href="index-en.html">
                 <img
                   class="pumpkin"
                   src="images/pumpkin.webp"            
-                  alt="English" aria-hidden="true"
+                  alt="" aria-hidden="true"
                   data-src="images/pumpkin.webp"       
                   data-hover="images/pumpkin-active.webp"  
                   data-active="images/pumpkin-active.webp" 
@@ -156,7 +157,7 @@
       </div>
     </div>
 
-    <!-- 手機版光箱：Bootstrap Modal -->
+    <!-- 手機版光箱：Bootstrap Modal（移除 menu 角色） -->
     <div class="modal fade modal-menu" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-modal="true" role="dialog">
       <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content bg-deeper-purple text-white">
@@ -165,46 +166,46 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
           </div>
           <div class="modal-body">
-            <ul class="modal-list" role="menu" aria-label="手機選單">
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="index.html">
-                  <img class="pumpkin" src="images/pumpkin-active.webp" alt="最新消息" aria-hidden="true">最新消息
+            <ul class="modal-list" aria-label="手機選單">
+              <li>
+                <a class="modal-link" href="index.html">
+                  <img class="pumpkin" src="images/pumpkin-active.webp" alt="" aria-hidden="true">最新消息
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="theme-activities.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="主題活動" aria-hidden="true">主題活動
+              <li>
+                <a class="modal-link" href="theme-activities.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">主題活動
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="magic-stage.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="魔幻舞台" aria-hidden="true">魔幻舞台
+              <li>
+                <a class="modal-link" href="magic-stage.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">魔幻舞台
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="transport-info.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="交通資訊" aria-hidden="true">交通資訊
+              <li>
+                <a class="modal-link" href="transport-info.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">交通資訊
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="partners.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="萬聖城盟友" aria-hidden="true">萬聖城盟友
+              <li>
+                <a class="modal-link" href="partners.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">萬聖城盟友
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="nearby-attractions.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="順遊景點" aria-hidden="true">順遊景點
+              <li>
+                <a class="modal-link" href="nearby-attractions.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">順遊景點
                 </a>
               </li>
 
-              <li role="none">
-                <a role="menuitem" class="modal-link" href="index-en.html">
-                  <img class="pumpkin" src="images/pumpkin.webp" alt="English" aria-hidden="true">English
+              <li>
+                <a class="modal-link" href="index-en.html">
+                  <img class="pumpkin" src="images/pumpkin.webp" alt="" aria-hidden="true">English
                 </a>
               </li>
             </ul>
@@ -224,18 +225,10 @@
       </section>
 
       <!-- 文章內容區 -->
-      <section class="post-area" aria-labelledby="postTitle">
+      <section class="post-area" aria-labelledby="ptitle">
         <div class="wrap-1200">
           <!-- 次選單 -->
           <article class="post-box mb-4">
-            <!-- 標題 -->
-            <!-- <header class="post-header">
-              <h1 id="postTitle" class="post-title">
-                <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
-                活動介紹
-              </h1>
-            </header> -->
-
             <!-- 內文（可在其他頁共用 .post-body） -->
             <div class="post-body">
               <!-- CTA 按鈕列 -->
@@ -273,17 +266,17 @@
           <article class="post-box mb-4" id="theme01">
             <!-- 標題 -->
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
-                <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+              <h2 id="postTitle-1" class="post-title pb-3">
+                <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 活動訊息
-              </h1>
+              </h2>
             </header>
 
             <!-- 內文（可在其他頁共用 .post-body） -->
             <div class="post-body">
-              <section class="liveinfo-area" aria-labelledby="liveinfoTitle">
+              <section class="liveinfo-area" aria-labelledby="liveinfoTitle-1">
                 <div class="wrap-1200 px-3">
-                  <h2 id="liveinfoTitle" class="visually-hidden">活動介紹</h2>
+                  <h2 id="liveinfoTitle-1" class="visually-hidden">活動介紹</h2>
 
                   <!-- 上：主視覺 + 說明 -->
                   <div class="row g-3 align-items-start liveinfo-top">
@@ -310,10 +303,10 @@
           <article class="post-box mb-4" id="theme02">
             <!-- 標題 -->
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
-                <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+              <h2 id="postTitle-2" class="post-title pb-3">
+                <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 主題裝置
-              </h1>
+              </h2>
             </header>
 
             <!-- 內文（可在其他頁共用 .post-body） -->
@@ -324,16 +317,16 @@
                 <div class="col-12">
                   <div class="liveinfo-desc ps-md-3 ps-0">
                     <p class="fs-5 mb-5">
-                      「魔蛛古堡」是一座「萬聖魔幻城堡」，也是一座融合古堡建築風格與黑暗奇幻氛圍的夢魘之地。不僅是萬聖節視覺與情感的集中展現，更是一場關於想像力與恐懼感知的沈浸體驗場域。這座城堡有著萬聖節的神秘與魔法，結合古堡建築風、寶藏、魔獸、怪物、迷宮、南瓜燈、蜘蛛、蝙蝠、殭屍、木乃伊等各種經典元素，營造出一個既驚悚又夢幻的空間。</br></br>
+                      「魔蛛古堡」是一座「萬聖魔幻城堡」，也是一座融合古堡建築風格與黑暗奇幻氛圍的夢魘之地。不僅是萬聖節視覺與情感的集中展現，更是一場關於想像力與恐懼感知的沈浸體驗場域。這座城堡有著萬聖節的神秘與魔法，結合古堡建築風、寶藏、魔獸、怪物、迷宮、南瓜燈、蜘蛛、蝙蝠、殭屍、木乃伊等各種經典元素，營造出一個既驚悚又夢幻的空間。<br><br>
                     據說，城堡裡到處隱藏著無數的寶藏，可能是被封印的古老魔法書、能實現願望的水晶球、永恆不滅的魔法戒指，以及來自各時代的珍奇古物⋯⋯⋯⋯。然而，這些寶藏並非無主之物。每一處寶庫都由強大怪獸所把守，牠們或是古代咒術幻化而生的魔怪，或是受困於詛咒、守著寶藏永世不得離去的亡魂。
-                    </br></br>
+                    <br><br>
                     「魔蛛古堡」是一座「萬聖魔幻城堡」，
-                    「魔幻蜘蛛王」是城堡與魔法結界的守護者！</br></br>
+                    「魔幻蜘蛛王」是城堡與魔法結界的守護者！<br><br>
                     三條通往城堡的魔徑「孟婆奈何橋、魔神照妖鏡、詭異盤絲洞」，
                     三處魔域「萬聖夜總會、鬼吹燈迷宮、盤絲光纖樹」，
                     三大魔怪「魅影眼球人、鬼面南瓜人、殭屍木乃伊」，
-                    城堡裡到處都深藏著無數的「寶藏」⋯⋯</br></br>
-                    最終真正的寶藏，竟然是「搞怪糖果屋」！？</br>
+                    城堡裡到處都深藏著無數的「寶藏」⋯⋯<br><br>
+                    最終真正的寶藏，竟然是「搞怪糖果屋」！？<br>
                     還有，寶藏圖書館、睛彩演藝廳、夢幻公彩屋⋯⋯⋯⋯
 
                     </p>
@@ -344,16 +337,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t01">
                       <img
                         src="images/theme/t01.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="主舞台夜景：拱形燈架與機械蜘蛛手臂，天際光束掃射，兩側LED螢幕播放影像">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t01" class="visually-hidden">
                       魔幻蜘蛛王
                     </figcaption>
                   </figure>
@@ -377,16 +369,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t02">
                       <img
                         src="images/theme/t02.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="霧氣瀰漫的階梯裝置，兩側南瓜與發光大鍋，盡頭為骷髏城堡與彩旗">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t02" class="visually-hidden">
                       孟婆奈何橋
                     </figcaption>
                   </figure>
@@ -410,16 +401,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t03">
                       <img
                         src="images/theme/t03.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="紅色方框光廊，頂部蜘蛛網與漂浮小幽靈，兩側纏繞蛛絲">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t03" class="visually-hidden">
                       魔神照妖鏡
                     </figcaption>
                   </figure>
@@ -443,16 +433,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t04">
                       <img
                         src="images/theme/t04.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="紫色燈海隧道，蛛網與巨型蜘蛛環繞，前景停放公共腳踏車">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t04" class="visually-hidden">
                       詭異盤絲洞
                     </figcaption>
                   </figure>
@@ -476,16 +465,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t05">
                       <img
                         src="images/theme/t05.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="彩繪骷髏城堡前廣場，墓碑與南瓜擺設，地面投影花紋">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t05" class="visually-hidden">
                       萬聖夜總會
                     </figcaption>
                   </figure>
@@ -509,16 +497,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t06">
                       <img
                         src="images/theme/t06.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="俯瞰發光迷宮裝置，霓虹圍欄與懸掛鬼臉球，中央立柱有行人">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t06" class="visually-hidden">
                       鬼吹燈迷宮
                     </figcaption>
                   </figure>
@@ -542,16 +529,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t07">
                       <img
                         src="images/theme/t07.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="巨樹垂掛粉藍光纖燈，周圍有發光蜘蛛與蛛網裝置">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t07" class="visually-hidden">
                       盤絲光纖樹
                     </figcaption>
                   </figure>
@@ -575,16 +561,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t08">
                       <img
                         src="images/theme/t08.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="樹間串燈下的鬼火與巨型眼球裝置，路燈覆以蛛網">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t08" class="visually-hidden">
                       魅影眼球人
                     </figcaption>
                   </figure>
@@ -608,16 +593,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t09">
                       <img
                         src="images/theme/t09.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="女巫帽城門與水晶球主題裝置，周圍南瓜與幽靈發光">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t09" class="visually-hidden">
                       鬼面南瓜人
                     </figcaption>
                   </figure>
@@ -641,16 +625,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t10">
                       <img
                         src="images/theme/t10.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="藍黃雙色燈景下，木乃伊與巨網於樹旁，地面散落發光水晶與金幣燈飾">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t10" class="visually-hidden">
                       殭屍木乃伊
                     </figcaption>
                   </figure>
@@ -674,16 +657,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t11">
                       <img
                         src="images/theme/t11.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="萬聖魔幻城堡：巨型女巫帽與水晶球拱門，南瓜與幽靈環繞。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t11" class="visually-hidden">
                       萬聖魔幻城堡
                     </figcaption>
                   </figure>
@@ -707,16 +689,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t12">
                       <img
                         src="images/theme/t12.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="搞怪糖果屋：拐杖糖、馬卡龍怪、發光小熊裝置。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t12" class="visually-hidden">
                       搞怪糖果屋
                     </figcaption>
                   </figure>
@@ -740,32 +721,36 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t13">
                       <img
                         src="images/theme/t13.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="紫蛛寶藏箱：巨型發光寶箱與金幣特效。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t13" class="visually-hidden">
                       紫蛛寶藏箱
                     </figcaption>
                   </figure>
                 </div>
 
-                <!-- 右：標題＋文字 -->
+                <!-- 右：標題＋文字（文字版膠囊樣式） -->
                 <div class="col-12 col-md-6">
                   <div class="poi-panel">
-                    <h2 class="poi-title">
-                      <span class="poi-no">紫蛛寶藏箱</span>
+                    <h2 class="poi-ribbon">
+                      <span class="poi-ribbon__kicker">光環境佈置</span>
+                      <span class="poi-ribbon__title">紫蛛寶藏箱</span>
                     </h2>
+
+                    <!-- 原始內文：完全不動 -->
                     <p>
                       佈滿紫蜘與絲網的寶藏箱悄然打開，無數金幣化作光芒傾瀉而出，將四周映照得奪目絢爛。每一口寶箱都散發著不同色彩，有的金光閃閃，有的流轉紫光與紅光，像是隱藏著無盡的秘密。周圍的樹木也被點亮，枝頭掛滿發光金幣，宛如「金幣樹」在夜空下盛放，與寶藏箱相互呼應。
                     </p>
                   </div>
                 </div>
+
+
               
                 <hr class="post-sep" aria-hidden="true">
 
@@ -773,16 +758,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t14">
                       <img
                         src="images/theme/t14.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="炫光彩晶礦：多顆彩色發光水晶散落林間。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t14" class="visually-hidden">
                       炫光彩晶礦
                     </figcaption>
                   </figure>
@@ -791,8 +775,9 @@
                 <!-- 右：標題＋文字 -->
                 <div class="col-12 col-md-6">
                   <div class="poi-panel">
-                    <h2 class="poi-title">
-                      <span class="poi-no">炫光彩晶礦</span>
+                    <h2 class="poi-ribbon">
+                      <span class="poi-ribbon__kicker">光環境佈置</span>
+                      <span class="poi-ribbon__title">炫光彩晶礦</span>
                     </h2>
                     <p>
                       在魔蛛古堡的山林、大地之間，蘊藏著許許多多的「炫光彩晶礦」，它是古堡最重要的寶藏之一。有人說，炫光彩晶是被施了魔法的寶藏，只有純粹的心靈才能看見它最璀璨的一面；也有人相信，它們是萬聖魔幻城的能量之源，守護著整座城市的黑夜與光影。
@@ -806,16 +791,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t15">
                       <img
                         src="images/theme/t15.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="骷魅光之幡：彩色骷髏旗串掛滿林道。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t15" class="visually-hidden">
                       骷魅光之幡
                     </figcaption>
                   </figure>
@@ -824,8 +808,9 @@
                 <!-- 右：標題＋文字 -->
                 <div class="col-12 col-md-6">
                   <div class="poi-panel">
-                    <h2 class="poi-title">
-                      <span class="poi-no">骷魅光之幡</span>
+                    <h2 class="poi-ribbon">
+                      <span class="poi-ribbon__kicker">光環境佈置</span>
+                      <span class="poi-ribbon__title">骷魅光之幡</span>
                     </h2>
                     <p>
                       夜色籠罩之際，結合骷髏與魅影，突顯萬聖節詭譎、幽靈般氛圍的「骷魅光之幡」，繽紛多彩地高掛枝頭，粉紅、金黃、藍紫交錯閃爍，宛如一幅懸掛於夜空的光彩畫卷。隨風擺動的旗面，像是在低聲吟唱咒語，也像在奏響萬聖之夜的狂歡樂章。
@@ -839,16 +824,15 @@
                 <!-- 左：圖片 -->
                 <div class="col-12 col-md-6">
                   <figure class="poi-fig m-0">
-                    <a class="poi-fig-link"
-                       rel="noopener"
-                       aria-describedby="cap-jingfugong">
+                    <div class="poi-fig-link"
+                       aria-describedby="cap-t16">
                       <img
                         src="images/theme/t16.webp"
                         class="img-fluid poi-img"
                         loading="lazy"
                         alt="冥焰幻瞳林：樹間吊掛冥火與巨型眼球裝置。">
-                    </a>
-                    <figcaption id="cap-jingfugong" class="visually-hidden">
+                    </div>
+                    <figcaption id="cap-t16" class="visually-hidden">
                       冥焰幻瞳林
                     </figcaption>
                   </figure>
@@ -857,8 +841,9 @@
                 <!-- 右：標題＋文字 -->
                 <div class="col-12 col-md-6">
                   <div class="poi-panel">
-                    <h2 class="poi-title">
-                      <span class="poi-no">冥焰幻瞳林</span>
+                    <h2 class="poi-ribbon">
+                      <span class="poi-ribbon__kicker">光環境佈置</span>
+                      <span class="poi-ribbon__title">冥焰幻瞳林</span>
                     </h2>
                     <p>
                       冥焰幻瞳林，隱身於古堡深處，林間燃起詭譎冥焰，紅藍紫色鬼火漂浮閃爍，營造出靈魂低語的氛圍。地面散落的巨大幻瞳緩慢轉動，凝視每位闖入者，讓人陷入被監視的幻象之中。透過光影與互動設計，眼球會隨遊客移動而閃爍，鬼火伴隨音效燃起，營造真幻難辨的沉浸體驗。最終，冒險者將面對「魅影眼球人」的挑戰，唯有戰勝恐懼，方能穿越幻境。
@@ -874,22 +859,22 @@
           <article class="post-box mb-4" id="theme03">
             <!-- 標題 -->
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
-                <img src="images/icon02.webp" class="video-icon" alt="綠色火焰icon 黃色火焰icon" aria-hidden="true">
+              <h2 id="postTitle-3" class="post-title pb-3">
+                <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 精彩活動
-              </h1>
+              </h2>
             </header>
 
             <!-- 內文（可在其他頁共用 .post-body） -->
             <div class="post-body">
               <!-- 萬聖節彩燈活動 -->
-              <section class="liveinfo-area" aria-labelledby="liveinfoTitle">
+              <section class="liveinfo-area" aria-labelledby="busxTitle-1">
                 <div class="wrap-1200 px-3">
 
                   <!-- 上：主視覺 + 說明 -->
                   <div class="row g-3 align-items-start liveinfo-top">
                     <div class="col-12 busx-head">
-                      <h2 id="busxTitle" class="busx-title">萬聖魔幻夜光彩街秀</h2>
+                      <h2 id="busxTitle-1" class="busx-title">萬聖魔幻夜光踩街秀</h2>
                     </div>
                     <!-- 主視覺（左） -->
                     <div class="col-md-6 col-12">
@@ -928,30 +913,30 @@
                     </div>
                      <div class="col-12 ps-md-3 ps-0">
                       <p class="mb-5">
-                        <b class="fs-4 text-yellow">【劇情大綱】</b></br>
+                        <b class="fs-4 text-yellow">【劇情大綱】</b><br>
                         在桃園萬聖城的中心，矗立著神祕詭譎的「魔蛛古堡」。傳說古堡深處，藏有無數珍貴寶藏，是人類探險與尋寶的終極聖地。
                         然而，若想奪得寶藏，必須先通過三條幽暗奇異的魔徑、闖過三大危險詭譎的魔域、並擊退潛伏其中的三大魔怪，才有機會抵達古堡的魔幻廣場，挑戰最終的守護者——魔幻蜘蛛王。
-                        </br></br>
+                        <br><br>
                         當夜幕低垂，古堡便甦醒。由「暗黑魔法師」統御的「寶藏巡守隊」，每晚巡遊園地，守護古堡的秘密與威嚴。
                         「寶藏巡守隊」成員有五位大型發光巨型充氣大偶的「夜光魔怪」(有鬼面南瓜人 、魅影眼球人、殭屍木乃伊、吸血蝙蝠人、神隱無臉人)以及五位身懷各種不同技藝(有軟骨舞蹈、帽子戲法、軟骨雜技、肢體特技、舞蹈專長)的「魔幻小妖」組成。還有一群來自古堡深處的「精靈小鬼」們，身披萬聖色彩，敲鑼打鼓、呼喊助威，讓整場巡遊更加熱鬧喧騰。
-                        </br></br>
+                        <br><br>
                         黑夜中，寶藏巡守隊浩浩蕩蕩現身，「夜光魔怪」的龐大身影、「魔幻小妖」的奇技與「精靈小鬼」的鼓聲，共同織就一場結合「踩街巡遊 × 魔幻劇場」的沉浸體驗。觀眾仿佛置身古堡探險，與探險者一同挑戰，最終在魔幻蜘蛛王的出現中迎來全場高潮。
-                        </br></br>
-                        <b class="fs-4 text-yellow">【角色介紹】</b></br>
-                        (一)一位「暗黑魔法師」：寶藏巡守隊的統御者，古堡能量的掌控者。身披黑金長袍，手持發光魔杖，口中吟唱古老咒語。既是觀眾的引導者，也是最神秘的力量來源，象徵黑暗與智慧的交錯。</br></br>
-                        (二) 五大「夜光魔怪」：巨型發光充氣大偶，為魔蛛古堡的象徵性守護者。</br>
-                        (1)鬼面南瓜人：滿臉詭笑，南瓜之眼閃爍火焰，掌管狂歡與恐懼。</br>
-                        (2)魅影眼球人：漂浮於夜空的巨眼，凝視之處皆幻象迷離。</br>
-                        (3)殭屍木乃伊：纏滿發光繃帶，散發詛咒與死亡氣息。</br>
-                        (4)吸血蝙蝠人：血紅雙眼，振翅遮月，是夜幕中最強大的掠食者。</br>
-                        (5)神隱無臉人：空白發光的面具，能折射人心深處的恐懼。</br></br>
-                        (三) 五位「魔幻小妖」：靈巧敏捷、技藝高超，遊走於巨偶之間，是巡守隊的動態核心。</br>
-                        (1) 幻舞小妖：軟骨舞蹈專長，以詭異柔軟的舞姿展現超人的身體線條。</br>
-                        (2) 戲法小妖：帽子戲法專長，雜耍帽子，變化無窮，帶來幽默與驚奇。</br>
-                        (3) 軟骨小妖：軟骨雜技專長，極限彎折、扭轉、倒立，營造詭譎與驚嘆。</br>
-                        (4) 魔力小妖：肢體特技專長，力量與平衡的高手，能完成高難度肢體動作。</br>
-                        (5) 舞靈小妖：舞蹈舞藝專長，以舞蹈為核心，連結全隊節奏，帶動群體氛圍。</br>
-                        (四) 一群「精靈小鬼」：古堡最活潑的小守護者。身穿萬聖色彩服飾，頭戴小角或小翅膀造型。負責敲鑼打鼓、奔跑呼喊，製造熱鬧與歡樂。</br></br>
+                        <br><br>
+                        <b class="fs-4 text-yellow">【角色介紹】</b><br>
+                        (一)一位「暗黑魔法師」：寶藏巡守隊的統御者，古堡能量的掌控者。身披黑金長袍，手持發光魔杖，口中吟唱古老咒語。既是觀眾的引導者，也是最神秘的力量來源，象徵黑暗與智慧的交錯。<br><br>
+                        (二) 五大「夜光魔怪」：巨型發光充氣大偶，為魔蛛古堡的象徵性守護者。<br>
+                        (1)鬼面南瓜人：滿臉詭笑，南瓜之眼閃爍火焰，掌管狂歡與恐懼。<br>
+                        (2)魅影眼球人：漂浮於夜空的巨眼，凝視之處皆幻象迷離。<br>
+                        (3)殭屍木乃伊：纏滿發光繃帶，散發詛咒與死亡氣息。<br>
+                        (4)吸血蝙蝠人：血紅雙眼，振翅遮月，是夜幕中最強大的掠食者。<br>
+                        (5)神隱無臉人：空白發光的面具，能折射人心深處的恐懼。<br><br>
+                        (三) 五位「魔幻小妖」：靈巧敏捷、技藝高超，遊走於巨偶之間，是巡守隊的動態核心。<br>
+                        (1) 幻舞小妖：軟骨舞蹈專長，以詭異柔軟的舞姿展現超人的身體線條。<br>
+                        (2) 戲法小妖：帽子戲法專長，雜耍帽子，變化無窮，帶來幽默與驚奇。<br>
+                        (3) 軟骨小妖：軟骨雜技專長，極限彎折、扭轉、倒立，營造詭譎與驚嘆。<br>
+                        (4) 魔力小妖：肢體特技專長，力量與平衡的高手，能完成高難度肢體動作。<br>
+                        (5) 舞靈小妖：舞蹈舞藝專長，以舞蹈為核心，連結全隊節奏，帶動群體氛圍。<br>
+                        (四) 一群「精靈小鬼」：古堡最活潑的小守護者。身穿萬聖色彩服飾，頭戴小角或小翅膀造型。負責敲鑼打鼓、奔跑呼喊，製造熱鬧與歡樂。<br><br>
                         在開演前有魔法師出場與觀眾互動，找出五位小朋友，教一組節奏，在遊行前，打擊開始遊行狀態並參與遊行。
                       </p>
                     </div>
@@ -964,20 +949,20 @@
           <!-- 03-2 -->
           <article class="post-box mb-4">
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
+              <h2 id="postTitle-4" class="post-title pb-3">
                 <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 精彩活動
-              </h1>
+              </h2>
             </header>
 
             <div class="post-body">
               <!-- 用實際存在的標題來標記區塊 -->
-              <section class="liveinfo-area" aria-labelledby="busxTitle">
+              <section class="liveinfo-area" aria-labelledby="busxTitle-2">
                 <div class="wrap-1200 px-3">
                   <div class="row g-3 align-items-start liveinfo-top">
 
                     <div class="col-12 busx-head">
-                      <h2 id="busxTitle" class="busx-title">魔幻學院－魔幻面具體驗營</h2>
+                      <h2 id="busxTitle-2" class="busx-title">魔幻學院－魔幻面具體驗營</h2>
                     </div>
 
                     <div class="busx-box">
@@ -1028,7 +1013,7 @@
 
                             <dl class="row g-2 liveinfo-dl">
                               <dt class="col-auto me-2"><span class="tag-pill tag-orange">活動時間</span></dt>
-                              <dd class="col-md col-12 liveinfo-dd text-black">17:00 — 20:20（每 40 分鐘 1 梯次，共 5 梯次）</dd>
+                              <dd class="col-md col-12 liveinfo-dd text黑">17:00 — 20:20（每 40 分鐘 1 梯次，共 5 梯次）</dd>
                             </dl>
 
                             <dl class="row g-2 liveinfo-dl">
@@ -1057,60 +1042,24 @@
           <!-- 03-3 -->
           <article class="post-box mb-4">
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
+              <h2 id="postTitle-5" class="post-title pb-3">
                 <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 精彩活動
-              </h1>
+              </h2>
             </header>
 
             <div class="post-body">
               <!-- 用實際存在的標題來標記區塊 -->
-              <section class="liveinfo-area" aria-labelledby="busxTitle">
+              <section class="liveinfo-area" aria-labelledby="busxTitle-3">
                 <div class="wrap-1200 px-3">
                   <div class="row g-3 align-items-start liveinfo-top">
 
                     <div class="col-12 busx-head">
-                      <h2 id="busxTitle" class="busx-title">魔幻學院-假鬼假怪變裝PA</h2>
+                      <h2 id="busxTitle-3" class="busx-title">魔幻學院-假鬼假怪變裝PA</h2>
                     </div>
 
                     <div class="busx-box">
                       <div class="row g-3 align-items-start liveinfo-top">
-
-                        <!-- <div class="col-md-6 col-12">
-                          <div class="table-responsive" role="region" aria-label="梯次表可左右捲動" tabindex="0">
-                            <table class="table sched-table align-middle mb-0">
-                              <caption class="visually-hidden">魔幻學院－魔幻面具體驗營，包含梯次及時間</caption>
-                              <thead>
-                                <tr>
-                                  <th scope="col" class="w-25">梯次</th>
-                                  <th scope="col">時間</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th scope="row">第1梯次</th>
-                                  <td>17:00 – 17:40</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">第2梯次</th>
-                                  <td>17:40 – 18:20</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">第3梯次</th>
-                                  <td>18:20 – 19:00</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">第4梯次</th>
-                                  <td>19:00 – 19:40</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">第5梯次</th>
-                                  <td>19:40 – 20:20</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div> -->
 
                         <div class="col-12">
                           <div class="liveinfo-desc">
@@ -1149,20 +1098,20 @@
           <!-- 03-4 -->
           <article class="post-box mb-4">
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
+              <h2 id="postTitle-6" class="post-title pb-3">
                 <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 精彩活動
-              </h1>
+              </h2>
             </header>
 
             <div class="post-body">
               <!-- 用實際存在的標題來標記區塊 -->
-              <section class="liveinfo-area" aria-labelledby="busxTitle">
+              <section class="liveinfo-area" aria-labelledby="busxTitle-4">
                 <div class="wrap-1200 px-3">
                   <div class="row g-3 align-items-start liveinfo-top">
 
                     <div class="col-12 busx-head">
-                      <h2 id="busxTitle" class="busx-title">萬聖變裝競賽</h2>
+                      <h2 id="busxTitle-4" class="busx-title">萬聖變裝競賽</h2>
                     </div>
 
                     <div class="busx-box">
@@ -1170,7 +1119,7 @@
 
                         <div class="col-md-7 col-12">
                           <!-- t01 -->
-                          <div class="table-responsive" role="region" aria-label="梯次表可左右捲動" tabindex="0">
+                          <div class="table-responsive" role="region" aria-label="萬聖變裝競賽－名額與資格表，可左右捲動" tabindex="0">
                             <table class="table sched-table align-middle mb-0">
                               <caption class="visually-hidden">萬聖變裝競賽，包含梯次及時間</caption>
                               <thead>
@@ -1199,7 +1148,7 @@
                           </div>
 
                           <!-- t02 -->
-                          <div class="table-responsive" role="region" aria-label="梯次表可左右捲動" tabindex="0">
+                          <div class="table-responsive" role="region" aria-label="萬聖變裝競賽－獎金表，可左右捲動" tabindex="0">
                             <table class="table sched-table align-middle mb-0">
                               <caption class="visually-hidden">萬聖變裝競賽，包含梯次及時間</caption>
                               <thead>
@@ -1274,20 +1223,20 @@
           <!-- 03-5 -->
           <article class="post-box mb-4">
             <header class="post-header">
-              <h1 id="postTitle" class="post-title pb-3">
+              <h2 id="postTitle-7" class="post-title pb-3">
                 <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
                 精彩活動
-              </h1>
+              </h2>
             </header>
 
             <div class="post-body">
               <!-- 用實際存在的標題來標記區塊 -->
-              <section class="liveinfo-area" aria-labelledby="busxTitle">
+              <section class="liveinfo-area" aria-labelledby="busxTitle-5">
                 <div class="wrap-1200 px-3">
                   <div class="row g-3 align-items-start liveinfo-top">
 
                     <div class="col-12 busx-head">
-                      <h2 id="busxTitle" class="busx-title">搞鬼搞怪來尋寶：萬聖節變裝討糖任務正式啟動！</h2>
+                      <h2 id="busxTitle-5" class="busx-title">搞鬼搞怪來尋寶：萬聖節變裝討糖任務正式啟動！</h2>
                     </div>
 
                     <div class="busx-box">
@@ -1363,7 +1312,7 @@
                             <p class="brown-title">每日主題日與通關口號：</p>
                           </div>
 
-                          <div class="table-responsive" role="region" aria-label="梯次表可左右捲動" tabindex="0">
+                          <div class="table-responsive" role="region" aria-label="每日主題日與通關口號表，可左右捲動" tabindex="0">
                             <table class="table sched-table align-middle mb-0">
                               <caption class="visually-hidden">搞鬼搞怪來尋寶，包日期及內容</caption>
                               <thead>
@@ -1458,15 +1407,14 @@
 
     </main>
     
-    <!-- 下方主視覺 -->
+    <!-- 下方主視覺（裝飾圖，alt 置空） -->
     <div class="container-fluid p-0">
       <figure class="m-0">
         <img
           src="images/down-image-page.webp"
           class="img-fluid w-100 d-block"
           width="1920" height="640"
-          alt="裝飾用圖片"
-          aria-describedby="downPosterInfo"
+          alt=""
           loading="lazy" decoding="async">
       </figure>
     </div>
@@ -1488,6 +1436,19 @@
           指導單位：桃園市政府、桃園市議會。主辦單位：桃園市政府觀光旅遊局。
         </figcaption>
       </figure>
+      <figure class="m-0">
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="images/footer-image-2-m.webp">
+          <img
+            src="images/footer-image-2.webp"
+            class="footer-img"
+            width="1200"
+            height="200"
+            alt="頁尾贊助與主辦資訊"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </figure>
     </footer>
     
     <button id="backTop" class="backtop-btn" type="button" aria-label="回到頁面頂端" hidden>
@@ -1497,7 +1458,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     
   </body>
 
