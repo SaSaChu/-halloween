@@ -1759,8 +1759,20 @@ footer {
   padding-left: 2.25em;     /* 留空寬度（依圖面） */
   margin-bottom: .5rem;
 }
+.cn-ol {
+  counter-reset: num; /* 初始化計數器 */
+  position: relative;
+}
+
+.cn-ol > li {
+  list-style: none;
+  position: relative;
+  padding-left: 2em; /* 視需要調整縮排 */
+}
+
 .cn-ol > li::before {
-  content: counter(cjk, cjk-ideographic) "、";
+  counter-increment: num; /* 這行是關鍵！每個項目+1 */
+  content: counter(num, decimal-leading-zero) ". ";
   position: absolute;
   left: 0;
   top: 0;
