@@ -377,6 +377,9 @@
                         </div>
                       </div>
                     </div>
+
+                     <!-- ★ 新增：行動版卡片容器（JS 會自動塞內容） -->
+                     <div id="stageListCards" class="stage-cards d-none" aria-live="polite"></div>
                   </div>
 
                   <p class="fs-5 text-yellow mb-0 pt-2">
@@ -840,7 +843,261 @@
           </div>
         </article>
 
-        <!-- 04 節目介紹 -->
+        <!-- 04 桃園星光大道 -->
+        <article class="post-box mb-4" id="stageIntro">
+          <header class="post-header">
+            <h2 id="introTitle" class="post-title pb-3">
+              <img src="images/icon02.webp" class="video-icon" alt="" aria-hidden="true">
+              桃園星光大道
+            </h2>
+          </header>
+
+          <div class="post-body">
+            <section class="liveinfo-area" aria-labelledby="liveinfoTitleIntro">
+              <div class="wrap-1200 px-3">
+                <h3 id="liveinfoTitleIntro" class="visually-hidden">舞台轉播與演出資訊</h3>
+
+                <!-- 上：主視覺 + 說明 -->
+                <div class="row g-3 align-items-start liveinfo-top mb-5">
+                  <!-- 主視覺（左） -->
+                  <div class="col-12 col-md-6">
+                    <figure class="m-0">
+                      <div class="ratio ratio-16x9 liveinfo-poster">
+                        <img src="images/magic/image-title02.webp"
+                             class="w-100 h-100 object-fit-contain bg-dark" alt="">
+                      </div>
+                      <figcaption class="visually-hidden">活動主視覺。</figcaption>
+                    </figure>
+                  </div>
+
+                  <!-- 文字說明（右） -->
+                  <div class="col-12 col-md-6">
+                    <div class="liveinfo-desc">
+                      <p class="h4 lh-sm mb-5">桃園星光大道<br><br>桃園星人現身萬聖城，帶來精采演出！</p>
+
+                      <dl class="liveinfo-dl">
+                        <div class="row g-2">
+                          <dt class="col-auto"><span class="tag-pill tag-orange">活動日期</span></dt>
+                          <dd class="col-6" class="">2025/10/27(一) − 10/31(五)</dd>
+                        </div>
+
+                        <div class="row g-2">
+                          <dt class="col-auto"><span class="tag-pill tag-orange">活動時間</span></dt>
+                          <dd class="col liveinfo-dd">19:00-21:00</dd>
+
+                          <dt class="col-auto"><span class="tag-pill tag-orange">活動地點</span></dt>
+                          <dd class="col liveinfo-dd">魔幻蜘蛛王舞台</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 演出人員介紹 -->
+                <section class="liveinfo-area" aria-labelledby="liveinfoTitleEDMCast">
+                  <div class="wrap-1200 px-3">
+                    <h3 id="liveinfoTitleEDMCast" class="visually-hidden">演出人員介紹</h3>
+
+                    <hr class="post-sep" aria-hidden="true">
+
+                    <!-- 角色介紹 01 -->
+                    <section class="liveinfo-host" aria-label="10月28日・星期二 演出卡司">
+                      <div class="d-flex align-items-center gap-2 mb-4">
+                        <dl class="row g-2 liveinfo-dl">
+                          <dt class="col-auto"><span class="tag-pill tag-green">10月28日・星期二</span></dt>
+                          <dd class="col-12 col-md liveinfo-dd">The SE7EN、哈谷納瑪塔塔(哈璐米及古)、沒錢怎麼做音樂、海鷗的蛋、睡眠不足</dd>
+                        </dl>
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm01.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">The SE7EN</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm02.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">哈谷納瑪塔塔(哈璐米及古)</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm03.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">沒錢怎麼做音樂</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm04.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">海鷗的蛋</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm05.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">睡眠不足</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- 角色介紹 02 -->
+                    <section class="liveinfo-host" aria-label="10月29日・星期三 演出卡司">
+                      <div class="d-flex align-items-center gap-2 my-4">
+                        <dl class="row g-2 liveinfo-dl">
+                          <dt class="col-auto"><span class="tag-pill tag-green">10月29日・星期三</span></dt>
+                          <dd class="col-12 col-md liveinfo-dd">曾文靖、上古家貓、MINT、徐樂芸</dd>
+                        </dl>
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm06.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">曾文靖</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm07.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">上古家貓</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm08.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">MINT</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm09.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">徐樂芸</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- 角色介紹 03 -->
+                    <section class="liveinfo-host" aria-label="10月30日・星期四 演出卡司">
+                      <div class="d-flex align-items-center gap-2 my-4">
+                        <dl class="row g-2 liveinfo-dl">
+                          <dt class="col-auto"><span class="tag-pill tag-green">10月30日・星期四</span></dt>
+                          <dd class="col-12 col-md liveinfo-dd">OKULO、陳玟廷、心律不整、The Change、Johnson江審(劉至斌)</dd>
+                        </dl>
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm10.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">OKULO</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm11.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">陳玟廷</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm12.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">心律不整</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm13.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">The Change</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm14.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">Johnson江審(劉至斌)</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </section>
+
+                    <!-- 角色介紹 04 -->
+                    <section class="liveinfo-host" aria-label="10月31日・星期五 演出卡司">
+                      <div class="d-flex align-items-center gap-2 my-4">
+                        <dl class="row g-2 liveinfo-dl">
+                          <dt class="col-auto"><span class="tag-pill tag-green">10月31日・星期五</span></dt>
+                          <dd class="col-12 col-md liveinfo-dd">Astrovibe、謝青燁 Eric(謝祥寅)、LS DANCE、Yunix(温軒宇)、ZX(陳芷軒)</dd>
+                        </dl>
+                      </div>
+
+                      <div class="row g-3">
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm15.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">Astrovibe</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm16.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">謝青燁 Eric(謝祥寅)</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm17.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">LS DANCE</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm18.webp" class="img-fluid liveinfo-img"
+                                 alt="">
+                            <figcaption class="liveinfo-name text-center">Yunix(温軒宇)</figcaption>
+                          </figure>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                          <figure class="liveinfo-card m-0">
+                            <img src="images/magic/sm19.webp" class="img-fluid liveinfo-img" alt="">
+                            <figcaption class="liveinfo-name text-center">ZX(陳芷軒)</figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <!-- 05 節目介紹 -->
         <article class="post-box mb-4" id="stageIntro">
           <header class="post-header">
             <h2 id="introTitle" class="post-title pb-3">
@@ -882,44 +1139,6 @@
                         </div>
 
                         <div class="row g-2">
-                          <dt class="col-auto"><span class="tag-pill tag-orange">活動地點</span></dt>
-                          <dd class="col liveinfo-dd">魔幻蜘蛛王舞台</dd>
-                        </div>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
-
-                <hr class="post-sep mb-5" aria-hidden="true">
-
-                <!-- 上：主視覺 + 說明 -->
-                <div class="row g-3 align-items-start liveinfo-top mb-5">
-                  <!-- 主視覺（左） -->
-                  <div class="col-12 col-md-6">
-                    <figure class="m-0">
-                      <div class="ratio ratio-16x9 liveinfo-poster">
-                        <img src="images/magic/image-title02.webp"
-                             class="w-100 h-100 object-fit-contain bg-dark" alt="">
-                      </div>
-                      <figcaption class="visually-hidden">活動主視覺。</figcaption>
-                    </figure>
-                  </div>
-
-                  <!-- 文字說明（右） -->
-                  <div class="col-12 col-md-6">
-                    <div class="liveinfo-desc">
-                      <p class="h4 lh-sm mb-5">桃園星光大道<br><br>桃園星人現身萬聖城，帶來精采演出！</p>
-
-                      <dl class="liveinfo-dl">
-                        <div class="row g-2">
-                          <dt class="col-auto"><span class="tag-pill tag-orange">活動日期</span></dt>
-                          <dd class="col liveinfo-dd">2025/10/27(一) − 10/31(五)</dd>
-                        </div>
-
-                        <div class="row g-2">
-                          <dt class="col-auto"><span class="tag-pill tag-orange">活動時間</span></dt>
-                          <dd class="col liveinfo-dd">19:00-21:00</dd>
-
                           <dt class="col-auto"><span class="tag-pill tag-orange">活動地點</span></dt>
                           <dd class="col liveinfo-dd">魔幻蜘蛛王舞台</dd>
                         </div>

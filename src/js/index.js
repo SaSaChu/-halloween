@@ -270,3 +270,182 @@ $(function () {
   });
 
 });
+
+
+
+/* ================================================================
+ * Mobile Program Schedule → Cards (for #stageListTable)
+ * ================================================================ */
+(function () {
+  'use strict';
+
+  function isMobile() { return window.innerWidth < 992; }
+
+  function ensureCardsContainer() {
+    var cards = document.getElementById('stageListCards');
+    if (cards) return cards;
+    var wrap = document.getElementById('stageListTable');
+    if (!wrap) return null;
+    cards = document.createElement('div');
+    cards.id = 'stageListCards';
+    cards.className = 'stage-cards d-none';
+    cards.setAttribute('aria-live', 'polite');
+    wrap.appendChild(cards);
+    return cards;
+  }
+
+  function resolveLabels($table) {
+    var heads = $table.find('thead th').map(function () {
+      return ($(this).text() || '').trim();
+    }).get();
+
+    function findHead(regexArr, fallback) {
+      for (var i = 0; i < regexArr.length; i++) {
+        var rx = regexArr[i];
+        var hit = heads.find(function (h) { return rx.test(h); });
+        if (hit) return hit;
+      }
+      return fallback;
+    }
+
+    var timeHead  = findHead([/^(Time|時間)$/i], '時間');
+    var eventHead = findHead([/^(Event|節目名稱)$/i, /^Performance Program$/i], '節目');
+    var venueHead = findHead([/^(Venue|地點)$/i], '地點');
+
+    function colonFor(h) { return /[A-Za-z]/.test(h) ? ': ' : '：'; }
+
+    return {
+      time:  timeHead.replace(/\s*\(.+?\)\s*$/, ''),
+      event: eventHead.replace(/\s*\(.+?\)\s*$/, ''),
+      venue: venueHead.replace(/\s*\(.+?\)\s*$/, ''),
+      cTime:  colonFor(timeHead),
+      cEvent: colonFor(eventHead),
+      cVenue: colonFor(venueHead),
+    };
+  }
+
+  function buildGroupsFromTable($table) {
+    var groups = [], cur = null;
+
+    $table.find('tbody tr').each(function () {
+      var $tr = $(this);
+      var $th = $tr.children('th[scope="row"]');
+
+      if ($th.length) {
+        var dateText = ($th.text() || '').trim();
+        var weekday  = ($tr.children('td').eq(0).text() || '').trim();
+        cur = { date: dateText, weekday: weekday, items: [] };
+        groups.push(cur);
+
+        var time  = ($tr.children('td').eq(1).text() || '').trim();
+        var title = ($tr.children('td').eq(2).text() || '').trim();
+        var place = ($tr.children('td').eq(3).text() || '').trim();
+        if (time || title || place) cur.items.push({ time: time, title: title, place: place });
+      } else if (cur) {
+        var tds   = $tr.children('td');
+        var time  = (tds.eq(0).text() || '').trim();
+        var title = (tds.eq(1).text() || '').trim();
+        var place = (tds.eq(2).text() || '').trim();
+        if (!time && cur.items.length) time = cur.items[cur.items.length - 1].time;
+        cur.items.push({ time: time, title: title, place: place });
+      }
+    });
+
+    return groups;
+  }
+
+  function buildGroupTitle(dateText, weekday) {
+    var dt = (dateText || '').trim();
+    var hasLatin = /[A-Za-z]/.test(dt);
+    var hasCJKWd = /[一二三四五六日天]/.test(dt);
+    if (hasLatin || hasCJKWd) return dt;
+    if (!weekday) return dt;
+    return dt + '（' + weekday + '）';
+  }
+
+  var builtOnce = false;
+
+  function syncScheduleView() {
+    var $wrap  = $('#stageListTable');
+    var $table = $wrap.find('.sched-table');
+    if (!$wrap.length || !$table.length) return;
+
+    var cards = ensureCardsContainer();
+    if (!cards) return;
+
+    if (isMobile()) {
+      if (!builtOnce || !cards.children.length) {
+        var L = resolveLabels($table);
+        var groups = buildGroupsFromTable($table);
+        var frag = document.createDocumentFragment();
+
+        groups.forEach(function (g) {
+          var sec = document.createElement('section');
+          sec.className = 'stage-card';
+          sec.setAttribute('tabindex', '0');
+
+          var h = document.createElement('h4');
+          h.className = 'stage-card__title';
+          h.textContent = buildGroupTitle(g.date, g.weekday);
+          sec.appendChild(h);
+
+          var ul = document.createElement('ul');
+          ul.className = 'stage-card__list';
+
+          g.items.forEach(function (it) {
+            var li = document.createElement('li');
+            li.className = 'stage-item';
+
+            var time = document.createElement('div');
+            time.className = 'stage-item__time';
+            time.innerHTML = '<span class="label">' + L.time  + L.cTime  + '</span>' + (it.time  || '');
+
+            var title = document.createElement('div');
+            title.className = 'stage-item__title';
+            title.innerHTML = '<span class="label">' + L.event + L.cEvent + '</span>' + (it.title || '');
+
+            var place = document.createElement('div');
+            place.className = 'stage-item__place';
+            place.innerHTML = '<span class="label">' + L.venue + L.cVenue + '</span>' + (it.place || '');
+
+            var main = document.createElement('div');
+            main.className = 'stage-item__main';
+            main.appendChild(title);
+            main.appendChild(place);
+
+            li.appendChild(time);
+            li.appendChild(main);
+            ul.appendChild(li);
+          });
+
+          sec.appendChild(ul);
+          frag.appendChild(sec);
+        });
+
+        cards.innerHTML = '';
+        cards.appendChild(frag);
+        builtOnce = true;
+      }
+
+      cards.classList.remove('d-none');
+      $wrap.find('.table-responsive').addClass('d-none d-lg-block');
+    } else {
+      cards.classList.add('d-none');
+      $wrap.find('.table-responsive').removeClass('d-none d-lg-block');
+    }
+  }
+
+  // 綁定事件
+  document.addEventListener('DOMContentLoaded', syncScheduleView);
+  window.addEventListener('load', syncScheduleView);
+  window.addEventListener('resize', syncScheduleView);
+  window.addEventListener('orientationchange', syncScheduleView);
+
+  // ★ debug 掛鉤：只在需要時對外暴露，避免全域找不到
+  if (!window.__schedule_debug) {
+    window.__schedule_debug = {
+      sync: syncScheduleView,
+      isMobile: function(){ return window.innerWidth < 992; }
+    };
+  }
+})();
